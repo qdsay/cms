@@ -43,7 +43,7 @@ SOURCE ./database/qdsay.sql
 > \#sudo chmod -R 777 qdsay/application/backend/scaffold/template  
 > \#sudo chmod -R 777 qdsay/application/backend/scaffold/setup  
 
-项目发布后，修改上述目录权限为755，如下：
+注：项目发布后，修改上述目录权限为755，如下：
 > \#sudo chmod -R 755 qdsay/application/controllers  
 > \#sudo chmod -R 755 qdsay/application/models  
 > \#sudo chmod -R 755 qdsay/application/views  
