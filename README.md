@@ -1,7 +1,7 @@
 #勤道CMS构建文档
 ##项目简介
-勤道CMS首先是一套基础开发框架，一套极简的内容管理系统CMS，。
-勤道CMS基于Codeigniter开发，
+勤道CMS首先是一套基础开发框架，一套极简的内容管理系统CMS  
+勤道CMS基于Codeigniter开发。  
 
 ##安装
 
