@@ -1,0 +1,16 @@
+@charset "utf-8";
+input, img {vertical-align:middle;}
+#main {width:600px;height:160px;margin:0 auto;padding-top:200px;font-size:14px;background:url(../images/qd.png) -32px 160px no-repeat;}
+#client {width:300px;padding:15px 0;font-size:36px;font-weight:bold;text-align:center;float:left;}
+#loginBox {width:280px;padding-left:20px;position:relative;float:right;}
+#loginBox p {padding-top:8px;font-weight:bold;}
+#loginBox span {display:inline-block;width:60px;text-align:right;}
+#loginBox input {width:192px;height:20px;padding:4px;border-width:1px;border-style:solid;border-color:#ADADAD #E0E0E0 #E0E0E0 #ADADAD;vertical-align:middle;}
+#loginBox input:focus {border: solid 1px #0f9ae0;border-color:rgba(82,168,236,0.8);box-shadow:0 1px 1px rgba(0,0,0,0.075) inset,0 0 8px rgba(102,175,233,0.6);}
+#loginBox input:hover {border: solid 1px #3bb4f2;}
+#loginBox input.error {border:1px solid #FF0000;}
+#loginBox input.small {width:87px;margin-right:5px;}
+#loginBox label.error {line-height:20px;margin-left:60px;font-size:12px;font-weight:normal;color:#666666;}
+#loginBox label.checked {margin:0;}
+#loginBox button {width:200px;height:28px;border:1px solid #3BB4F2;background-color:#3BB4F2;color:#FFFFFF;text-align:center;color:#FFFFFF;}
+#loginBox button:hover {background-color:#0F9AE0;}
