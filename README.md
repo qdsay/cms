@@ -9,15 +9,15 @@
 
 ###导入数据库
 ####新建数据库：qdsay  
-CREATE DATABASE IF NOT EXISTS qdsay DEFAULT CHARSET utf8 COLLATE utf8_general_ci;  
+> CREATE DATABASE IF NOT EXISTS qdsay DEFAULT CHARSET utf8 COLLATE utf8_general_ci;  
 为数据库：qdsay赋予增删改查权限，并设置密码：123456  
-GRANT SELECT,INSERT,UPDATE,DELETE  
-ON qdsay.*  
-TO qdmaster@localhost  
-IDENTIFIED BY '123456';  
+> GRANT SELECT,INSERT,UPDATE,DELETE  
+> ON qdsay.*  
+> TO qdmaster@localhost  
+> IDENTIFIED BY '123456';  
 导入数据库表结构：  
-USE qdsay;  
-SOURCE ./database/qdsay.sql  
+> USE qdsay;  
+> SOURCE ./database/qdsay.sql  
 
 ####修改数据库配置
 > \#vi application/config/database.php  

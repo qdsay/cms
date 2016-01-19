@@ -112,7 +112,6 @@ class Catalog extends QD_Controller {
                 }
             }
             $this->data['current'] = $type;
-
             $this->load->model('Seo_model', 'seo');
             $this->data['seo'] = $this->seo->get_caller('catalog', $id);
 
