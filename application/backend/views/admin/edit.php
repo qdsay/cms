@@ -43,7 +43,7 @@
 <?php endforeach;?>
             </select>
           </div>
-          <div class="item"><label class="item-title mark" for="disabled">是否启用：</label><input type="checkbox" name="disabled" id="disabled" value="1"<?php if($admin->disabled == 1):?> checked="checked"<?php endif;?>/></div>
+          <div class="item"><label class="item-title mark" for="enabled">是否启用：</label><input type="checkbox" name="enabled" id="enabled" value="1"<?php if($admin->enabled == 1):?> checked="checked"<?php endif;?>/></div>
           <div class="item"><label class="item-title" for="btn">&nbsp;</label>
             <input type="submit" name="ok" id="ok" value="保存" /><a id="cancel" class="input-btn" href="<?php echo base_url('admin')?>">取消</a>
           </div>

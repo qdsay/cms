@@ -35,7 +35,7 @@ var base_url ='<?php echo base_url('groups')?>';
             <tr>
               <th scope="col">全选<input type="checkbox" name="checkAll" id="checkAll" /></th>
               <th scope="col">用户组</th>
-              <th scope="col"><?php echo qd_order_by('groups/pages', $paging->query, 'disabled', '是否启用')?></th>
+              <th scope="col"><?php echo qd_order_by('groups/pages', $paging->query, 'enabled', '是否启用')?></th>
               <th scope="col">操作</th>
             </tr>
           </thead>
@@ -51,7 +51,7 @@ var base_url ='<?php echo base_url('groups')?>';
             <tr id="<?php echo $row->id;?>">
               <td><input type="checkbox" name="groups[<?php echo $row->id;?>]" id="groups_<?php echo $row->id;?>" value="<?php echo $row->id;?>" class="checkIt" /></td>
               <td><?php echo $row->name;?></td>
-              <td><?php echo $disabled[$row->disabled];?></td>
+              <td><?php echo $enabled[$row->enabled];?></td>
               <td><a href="<?php echo base_url('groups/view/'.$row->id)?>">查看</a> | 
               <a href="<?php echo base_url('groups/edit/'.$row->id)?>">编辑</a> | 
               <a id="<?php echo $row->id;?>" title="<?php echo $row->name;?>" class="delete" href="javascript:void(0)">删除</a></td>

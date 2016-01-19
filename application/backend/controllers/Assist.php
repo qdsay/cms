@@ -78,7 +78,7 @@ class Assist extends QD_Controller {
                 'title' => $this->input->post('title'),
                 'aliases' => $this->input->post('aliases'),
                 'contents' => $this->input->post('contents'),
-                'disabled' => $this->input->post('disabled'),
+                'enabled' => $this->input->post('enabled'),
                 'addtime' => time()
             );
             //执行
@@ -116,7 +116,7 @@ class Assist extends QD_Controller {
                     'title' => $this->input->post('title'),
                     'aliases' => $this->input->post('aliases'),
                     'contents' => $this->input->post('contents'),
-                    'disabled' => $this->input->post('disabled'),
+                    'enabled' => $this->input->post('enabled'),
                 );
                 //更新
                 if ($this->assist->update($id, $data)) {

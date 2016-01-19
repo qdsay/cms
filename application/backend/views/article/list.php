@@ -53,7 +53,7 @@ var base_url = '<?php echo base_url('article')?>';
               <th scope="col">分类</th>
               <th scope="col">文章配图</th>
               <th scope="col">作者</th>
-              <th scope="col"><?php echo qd_order_by('article/pages', $paging->query, 'disabled', '是否启用')?></th>
+              <th scope="col"><?php echo qd_order_by('article/pages', $paging->query, 'enabled', '是否启用')?></th>
               <th scope="col"><?php echo qd_order_by('article/pages', $paging->query, 'addtime', '添加时间')?></th>
               <th scope="col">操作</th>
             </tr>
@@ -73,7 +73,7 @@ var base_url = '<?php echo base_url('article')?>';
               <td><?php echo isset($catalog[$row->catalog_id]) ? $catalog[$row->catalog_id]['name'] : '未分配';?></td>
               <td><?php if ($row->image):?><a href="/<?php echo $row->image;?>" target="_blank"><img width="24" height="24" src="/<?php echo $row->image;?>"></a><?php endif;?></td>
               <td><?php echo $row->author;?></td>
-              <td><a id="<?php echo $row->id;?>" class="setDisabled" status="<?php echo $row->disabled;?>" href="javascript:void(0)"><?php echo $disabled[$row->disabled];?></a></td>
+              <td><a id="<?php echo $row->id;?>" class="setEnabled" status="<?php echo $row->enabled;?>" href="javascript:void(0)"><?php echo $enabled[$row->enabled];?></a></td>
               <td><?php echo date('Y-m-d', $row->addtime);?></td>
               <td><a href="<?php echo base_url('article/view/'.$row->id)?>">查看</a>
 <?php if (qd_func_auth('edit', $auth['article'], 'edit')): ?>

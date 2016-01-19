@@ -138,8 +138,8 @@ var base_url = '<?php echo base_url('{$table}')?>';
               <td><?php echo isset(${$key|strip_id}[$row->{$key}]) ? ${$key|strip_id}[$row->{$key}] : '未分配';?></td>
 {elseif $entry[$key] eq 'switch'}
               <td><a id="<?php echo $row->id;?>" name="{$key}" class="switchIt" status="<?php echo $row->{$key};?>" href="javascript:void(0)"><?php echo ${$key}[$row->{$key}];?></a></td>
-{elseif $entry[$key] eq 'disabled'}
-              <td><a id="<?php echo $row->id;?>" class="setDisabled" status="<?php echo $row->{$key};?>" href="javascript:void(0)"><?php echo ${$key}[$row->{$key}];?></a></td>
+{elseif $entry[$key] eq 'enabled'}
+              <td><a id="<?php echo $row->id;?>" class="setEnabled" status="<?php echo $row->{$key};?>" href="javascript:void(0)"><?php echo ${$key}[$row->{$key}];?></a></td>
 {elseif $entry[$key] eq 'image' or $entry[$key] eq 'gallery'}
               <td><?php if ($row->{$key}):?><a href="/<?php echo $row->{$key};?>" target="_blank"><img width="24" height="24" src="/<?php echo $row->{$key};?>"></a><?php endif;?></td>
 {elseif $entry[$key] eq 'addtime'}

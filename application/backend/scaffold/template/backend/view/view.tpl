@@ -55,7 +55,7 @@
             <th width="100px;" scope="row">{$comments[$field]|default:$field}：</th>
             <td><?php echo ${$field}[${$table}->{$field}];?></td>
           </tr>
-{elseif $format eq 'disabled'}
+{elseif $format eq 'enabled'}
           <tr>
             <th width="100px;" scope="row">{$comments[$field]|default:$field}：</th>
             <td><?php echo ${$field}[${$table}->{$field}];?></td>

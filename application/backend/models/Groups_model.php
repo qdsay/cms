@@ -5,8 +5,8 @@ class Groups_model extends QD_Model {
     public $table = 'groups';
     public $primary_key = 'id';
 
-    public $attributes = 'id, name, auth, disabled';
-    public $list_attributes = 'id, name, disabled';
+    public $attributes = 'id, name, auth, enabled';
+    public $list_attributes = 'id, name, enabled';
     public $option = array('id', 'name');
 
     public $rules = array(

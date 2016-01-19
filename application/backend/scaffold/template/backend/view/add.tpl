@@ -115,7 +115,7 @@
           </div>
 {elseif $format eq 'switch'}
           <div class="item"><label class="item-title{if $null[$field] eq 'NO'} mark{/if}" for="{$field}">{$comments[$field]|default:$field}：</label><input type="checkbox" name="{$field}" id="{$field}" value="1" /></div>
-{elseif $format eq 'disabled'}
+{elseif $format eq 'enabled'}
           <div class="item"><label class="item-title{if $null[$field] eq 'NO'} mark{/if}" for="{$field}">{$comments[$field]|default:$field}：</label><input type="checkbox" name="{$field}" id="{$field}" value="1" /></div>
 {elseif $format eq 'textarea'}
           <div class="item"><label class="item-title{if $null[$field] eq 'NO'} mark{/if}" for="{$field}">{$comments[$field]|default:$field}：</label><div class="item-area"><textarea name="{$field}" id="{$field}" cols="45" rows="3"></textarea></div></div>
@@ -251,7 +251,7 @@ $().ready(function() {
                 equalTo:"#{$field}"
             }{if not $smarty.foreach.seek.last},{/if}
 
-{elseif $format neq 'attach' and $format neq 'image' and $format neq 'null' and $format neq 'disabled' and $format neq 'editor'}
+{elseif $format neq 'attach' and $format neq 'image' and $format neq 'null' and $format neq 'enabled' and $format neq 'editor'}
             {$field}: {
 {if $null[$field] eq 'NO'}
                 required: true,
@@ -306,7 +306,7 @@ $().ready(function() {
                 equalTo: "确认{$comments[$field]|default:$field}与{$comments[$field]|default:$field}不一致。"
             }{if not $smarty.foreach.seek.last},{/if}
 
-{elseif $format neq 'attach' and $format neq 'image' and $format neq 'null' and $format neq 'disabled' and $format neq 'editor'}
+{elseif $format neq 'attach' and $format neq 'image' and $format neq 'null' and $format neq 'enabled' and $format neq 'editor'}
             {$field}: {
 {if $null[$field] eq 'NO'}
                 required: "{$comments[$field]|default:$field}不能为空。",

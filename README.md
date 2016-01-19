@@ -64,4 +64,28 @@
 > \#sudo chmod -R 777 qdsay/application/backend/scaffold/setup  
 
 ###访问：  
-localhost/backend/scaffold  
+> localhost/backend/scaffold  
+
+###配置：
+文本：Text
+密码：Password
+文本域：TextArea
+分类：Catalog
+下拉选项（DB）：Select-From-DB
+下拉选项（Array）：Select-From-Array
+单选框（DB）：Radio-From-DB
+单选框（Array）：Radio-From-Array
+复选框（DB）：CheckBox-From-DB
+复选框（Array）：CheckBox-From-Array
+开关：Switch
+隐藏域：Hidden
+上传：Attach
+上传预览：Image
+组图：Gallery
+富文本：Editor
+日期：Date
+省份：Position-Province
+城市：Position-City
+区县：Position-District
+添加时间：AddTime
+禁用：Disabled

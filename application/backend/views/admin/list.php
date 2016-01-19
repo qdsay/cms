@@ -51,7 +51,7 @@ var base_url ='<?php echo base_url('admin')?>';
               <th scope="col">用户名</th>
               <th scope="col">用户组</th>
               <th scope="col"><?php echo qd_order_by('admin/pages', $paging->query, 'addtime', '添加时间')?></th>
-              <th scope="col"><?php echo qd_order_by('admin/pages', $paging->query, 'disabled', '是否启用')?></th>
+              <th scope="col"><?php echo qd_order_by('admin/pages', $paging->query, 'enabled', '是否启用')?></th>
               <th scope="col">操作</th>
             </tr>
           </thead>
@@ -69,7 +69,7 @@ var base_url ='<?php echo base_url('admin')?>';
               <td><?php echo $row->username;?></td>
               <td><?php echo $groups[$row->groups_id];?></td>
               <td><?php echo date('Y-m-d', $row->addtime);?></td>
-              <td><?php echo $disabled[$row->disabled];?></td>
+              <td><?php echo $enabled[$row->enabled];?></td>
               <td><a href="<?php echo base_url('admin/view/'.$row->id)?>">查看</a> | 
               <a href="<?php echo base_url('admin/edit/'.$row->id)?>">编辑</a> | 
               <a id="<?php echo $row->id;?>" title="管理员:<?php echo $row->username;?>" class="delIt" href="javascript:void(0)">删除</a></td>

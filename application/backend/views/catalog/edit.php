@@ -38,7 +38,7 @@
         <form action="<?php echo base_url('catalog/edit/'.$current.'/'.$catalog->id)?>" method="post" name="myform" id="myform">
           <div class="item"><label class="item-title mark" for="name">分类名称：</label><input type="text" class="input-txt long" name="name" id="name" value="<?php echo $catalog->name;?>" /></div>
           <div class="item"><label class="item-title" for="aliases">分类别名：</label><input type="text" class="input-txt long" name="aliases" id="aliases" value="<?php echo $catalog->aliases;?>" /></div>
-          <div class="item"><label class="item-title" for="disabled">是否启用：</label><input type="checkbox" name="disabled" id="disabled" value="1"<?php if($catalog->disabled == 1) echo ' checked="checked"';?>/></div>
+          <div class="item"><label class="item-title" for="enabled">是否启用：</label><input type="checkbox" name="enabled" id="enabled" value="1"<?php if($catalog->enabled == 1) echo ' checked="checked"';?>/></div>
           <div class="item"><label class="item-title" for="btn">&nbsp;</label>
             <input type="submit" name="ok" id="ok" value="保存" /><a id="cancel" class="input-btn" href="<?php echo base_url('catalog')?>">取消</a>
           </div>

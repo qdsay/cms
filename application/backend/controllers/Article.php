@@ -88,7 +88,7 @@ class Article extends QD_Controller {
                 'author' => $this->input->post('author'),
                 'origin' => $this->input->post('origin'),
                 'level' => $this->input->post('level'),
-                'disabled' => $this->input->post('disabled'),
+                'enabled' => $this->input->post('enabled'),
                 'addtime' => time()
             );
             //执行
@@ -133,7 +133,7 @@ class Article extends QD_Controller {
                     'author' => $this->input->post('author'),
                     'origin' => $this->input->post('origin'),
                     'level' => $this->input->post('level'),
-                    'disabled' => $this->input->post('disabled'),
+                    'enabled' => $this->input->post('enabled'),
                 );
                 //更新
                 if ($this->article->update($id, $data)) {

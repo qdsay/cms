@@ -134,7 +134,7 @@ class Catalog extends QD_Controller {
                 $data = array(
                     'name' => $this->input->post('name'),
                     'aliases' => $this->input->post('aliases'),
-                    'disabled' => $this->input->post('disabled'),
+                    'enabled' => $this->input->post('enabled'),
                 );
 
                 if ($this->catalog->update_where(array('id' => $id, 'type' => $type), $data)) {

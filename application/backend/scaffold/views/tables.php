@@ -85,7 +85,7 @@ html {font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#666666;overfl
             <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'position-city') echo ' selected="selected"';?> value="position-city">Position-City</option>
             <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'position-district') echo ' selected="selected"';?> value="position-district">Position-District</option>
             <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'addtime') echo ' selected="selected"';?> value="addtime">AddTime</option>
-            <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'disabled') echo ' selected="selected"';?> value="disabled">Disabled</option>
+            <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'enabled') echo ' selected="selected"';?> value="enabled">Enabled</option>
           </select></td>
           <td><select name="seo[<?php echo $row['name'];?>]" class="seo" id="seo_<?php echo $row['name'];?>" for="<?php echo $row['name'];?>">
             <option value="">请选择</option>

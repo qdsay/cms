@@ -243,7 +243,7 @@
           <div class="item"><label class="item-title<?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?> mark<?php endif; ?>" for="<?php echo $this->_var['field']; ?>"><?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>：</label><input type="checkbox" name="<?php echo $this->_var['field']; ?>" id="<?php echo $this->_var['field']; ?>" value="1"<?php echo '<?php'; ?>
  if($<?php echo $this->_var['table']; ?>-><?php echo $this->_var['field']; ?> == 1) echo ' checked="checked"';<?php echo '?>'; ?>
 /></div>
-<?php elseif ($this->_var['format_0_85381500_1453191028'] == 'disabled'): ?>
+<?php elseif ($this->_var['format_0_85381500_1453191028'] == 'enabled'): ?>
           <div class="item"><label class="item-title<?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?> mark<?php endif; ?>" for="<?php echo $this->_var['field']; ?>"><?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>：</label><input type="checkbox" name="<?php echo $this->_var['field']; ?>" id="<?php echo $this->_var['field']; ?>" value="1"<?php echo '<?php'; ?>
  if($<?php echo $this->_var['table']; ?>-><?php echo $this->_var['field']; ?> == 1) echo ' checked="checked"';<?php echo '?>'; ?>
 /></div>
@@ -446,7 +446,7 @@ if ($this->_foreach['seek']['total'] > 0):
                 equalTo:"#<?php echo $this->_var['field']; ?>"
             }<?php if (! ($this->_foreach['seek']['iteration'] == $this->_foreach['seek']['total'])): ?>,<?php endif; ?>
 
-<?php elseif ($this->_var['format_0_85519800_1453191028'] != 'attach' && $this->_var['format_0_85519800_1453191028'] != 'image' && $this->_var['format_0_85519800_1453191028'] != 'null' && $this->_var['format_0_85519800_1453191028'] != 'disabled'): ?>
+<?php elseif ($this->_var['format_0_85519800_1453191028'] != 'attach' && $this->_var['format_0_85519800_1453191028'] != 'image' && $this->_var['format_0_85519800_1453191028'] != 'null' && $this->_var['format_0_85519800_1453191028'] != 'enabled'): ?>
             <?php echo $this->_var['field']; ?>: {
 <?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?>
                 required: true,
@@ -505,7 +505,7 @@ if ($this->_foreach['seek']['total'] > 0):
                 equalTo: "确认密码与密码不一致。"
             }<?php if (! ($this->_foreach['seek']['iteration'] == $this->_foreach['seek']['total'])): ?>,<?php endif; ?>
 
-<?php elseif ($this->_var['format_0_85565600_1453191028'] != 'attach' && $this->_var['format_0_85565600_1453191028'] != 'image' && $this->_var['format_0_85565600_1453191028'] != 'null' && $this->_var['format_0_85565600_1453191028'] != 'disabled'): ?>
+<?php elseif ($this->_var['format_0_85565600_1453191028'] != 'attach' && $this->_var['format_0_85565600_1453191028'] != 'image' && $this->_var['format_0_85565600_1453191028'] != 'null' && $this->_var['format_0_85565600_1453191028'] != 'enabled'): ?>
             <?php echo $this->_var['field']; ?>: {
 <?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?>
                 required: "<?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>不能为空。",

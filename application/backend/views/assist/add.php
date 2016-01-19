@@ -48,7 +48,7 @@
           <div class="item editor"><label class="item-title" for="contents">内容：</label><div class="item-area">
             <script name="contents" id="contents" type="text/plain" style="width:100%;height:300px;"></script>
           </div></div>
-          <div class="item"><label class="item-title mark" for="disabled">是否启用：</label><input type="checkbox" name="disabled" id="disabled" value="1" /></div>
+          <div class="item"><label class="item-title mark" for="enabled">是否启用：</label><input type="checkbox" name="enabled" id="enabled" value="1" /></div>
           <div class="item"><label class="item-title" for="btn">&nbsp;</label>
             <input type="submit" name="ok" id="ok" value="保存" /><a id="cancel" class="input-btn" href="<?php echo base_url('assist')?>">取消</a>
           </div>

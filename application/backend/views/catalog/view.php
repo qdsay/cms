@@ -47,7 +47,7 @@
           </tr>
           <tr>
             <th width="100px;" scope="row">是否启用：</th>
-            <td><?php echo $disabled[$catalog->disabled];?></td>
+            <td><?php echo $enabled[$catalog->enabled];?></td>
           </tr>
         </table>
         <h3 class="cut-off"><span>SEO设置</span><a href="<?php echo base_url('catalog/seo/'.$current.'/'.$catalog->id)?>">编辑</a></h3>

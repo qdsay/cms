@@ -47,7 +47,7 @@ var base_url = '<?php echo base_url('assist')?>';
               <th scope="col">全选<input type="checkbox" name="checkAll" id="checkAll" /></th>
               <th scope="col">标题</th>
               <th scope="col">别名</th>
-              <th scope="col"><?php echo qd_order_by('assist/pages', $paging->query, 'disabled', '是否启用')?></th>
+              <th scope="col"><?php echo qd_order_by('assist/pages', $paging->query, 'enabled', '是否启用')?></th>
               <th scope="col"><?php echo qd_order_by('assist/pages', $paging->query, 'addtime', '添加时间')?></th>
               <th scope="col">操作</th>
             </tr>
@@ -65,7 +65,7 @@ var base_url = '<?php echo base_url('assist')?>';
               <td><input type="checkbox" name="assist[<?php echo $row->id;?>]" id="assist_<?php echo $row->id;?>" value="<?php echo $row->id;?>" class="checkIt" /></td>
               <td><?php echo $row->title;?></td>
               <td><?php echo $row->aliases;?></td>
-              <td><a id="<?php echo $row->id;?>" class="setDisabled" status="<?php echo $row->disabled;?>" href="javascript:void(0)"><?php echo $disabled[$row->disabled];?></a></td>
+              <td><a id="<?php echo $row->id;?>" class="setEnabled" status="<?php echo $row->enabled;?>" href="javascript:void(0)"><?php echo $enabled[$row->enabled];?></a></td>
               <td><?php echo date('Y-m-d', $row->addtime);?></td>
               <td><a href="<?php echo base_url('assist/view/'.$row->id)?>">查看</a>
 <?php if (qd_func_auth('edit', $auth['assist'], 'edit')): ?>

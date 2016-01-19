@@ -5,8 +5,8 @@ class Admin_model extends QD_Model {
     public $table = 'admin';
     public $primary_key = 'id';
 
-    public $attributes = 'id, username, password, groups_id, addtime, last_login_time, last_login_ip, disabled';
-    public $list_attributes = 'id, username, password, groups_id, addtime, disabled';
+    public $attributes = 'id, username, password, groups_id, addtime, last_login_time, last_login_ip, enabled';
+    public $list_attributes = 'id, username, password, groups_id, addtime, enabled';
     public $option = array('id', 'username');
 
     public $rules = array(
@@ -45,7 +45,7 @@ class Admin_model extends QD_Model {
      */
     public function verify($username,$password) {
         $this->db->select('id, username, groups_id');
-        $this->db->where(array('username' => $username, 'password' => md5($password), 'disabled' => 1));
+        $this->db->where(array('username' => $username, 'password' => md5($password), 'enabled' => 1));
         $this->db->limit(1);
         $query = $this->db->get('admin');
         return $query->row();

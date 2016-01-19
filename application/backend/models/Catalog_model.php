@@ -5,8 +5,8 @@ class Catalog_model extends QD_Model {
     public $table = 'catalog';
     public $primary_key = 'id';
 
-    public $attributes = 'id, father_id, sort, name, aliases, type, disabled, uptime';
-    public $list_attributes = 'id, father_id, sort, grade, name, aliases, disabled, uptime';
+    public $attributes = 'id, father_id, sort, name, aliases, type, enabled, uptime';
+    public $list_attributes = 'id, father_id, sort, grade, name, aliases, enabled, uptime';
     public $option = array('id', 'name');
 
     public $rules = array(

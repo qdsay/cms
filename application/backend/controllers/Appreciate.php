@@ -92,7 +92,7 @@ class Appreciate extends QD_Controller {
                 'url_id' => $this->input->post('url_id'),
                 'catalog_id' => $this->input->post('catalog_id'),
                 'promote' => $this->input->post('promote'),
-                'disabled' => $this->input->post('disabled'),
+                'enabled' => $this->input->post('enabled'),
                 'addtime' => time()
             );
             //执行
@@ -137,7 +137,7 @@ class Appreciate extends QD_Controller {
                     'ued' => $this->input->post('ued'),
                     'catalog_id' => $this->input->post('catalog_id'),
                     'promote' => $this->input->post('promote'),
-                    'disabled' => $this->input->post('disabled'),
+                    'enabled' => $this->input->post('enabled'),
                     'url_id' => $this->input->post('url_id')
                 );
                 //更新

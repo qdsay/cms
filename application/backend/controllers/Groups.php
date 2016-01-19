@@ -62,7 +62,7 @@ class Groups extends QD_Controller {
             $data = array(
                 'name' => $this->input->post('name'),
                 'auth' => serialize($auth),
-                'disabled' => $this->input->post('disabled')
+                'enabled' => $this->input->post('enabled')
             );
             if ($id = $this->groups->insert($data)) {
                 $this->load->library('notice');
@@ -94,18 +94,18 @@ class Groups extends QD_Controller {
                         $auth[$c] = $methods;
                     }
                 }
-                $disabled = $this->input->post('disabled');
-                if ($disabled == 0) {
+                $enabled = $this->input->post('enabled');
+                if ($enabled == 0) {
                     $this->load->model('Admin_model', 'admin');
-                    $this->admin->disabled(
-                        array('groups_id' => $id, 'disabled' => 1),
-                        array('disabled' => 0)
+                    $this->admin->enabled(
+                        array('groups_id' => $id, 'enabled' => 1),
+                        array('enabled' => 0)
                     );
                 }
                 $data = array(
                     'name' => $this->input->post('name'),
                     'auth' => serialize($auth),
-                    'disabled' => $disabled
+                    'enabled' => $enabled
                 );
                 if ($this->groups->update($id, $data)) {
                     $this->load->library('notice');

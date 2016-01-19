@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <th width="100px;" scope="row">是否启用：</th>
-            <td><?php echo $disabled[$assist->disabled];?></td>
+            <td><?php echo $enabled[$assist->enabled];?></td>
           </tr>
           <tr>
             <th width="100px;" scope="row">添加时间：</th>

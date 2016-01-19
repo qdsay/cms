@@ -208,7 +208,7 @@ class Scaffold extends CI_Controller {
                         $hidden[$k] = $v;
                     } elseif ($v == 'null') {
                         unset($entry[$k]);
-                    } elseif ($v == 'disabled') {
+                    } elseif ($v == 'enabled') {
                         //Code
                     } elseif ($v == 'switch') {
                         //Code
@@ -308,7 +308,7 @@ class Scaffold extends CI_Controller {
                             $hidden[$k] = $v;
                         } elseif ($v == 'null') {
                             unset($entry[$k]);
-                        } elseif ($v == 'disabled') {
+                        } elseif ($v == 'enabled') {
                             //Code
                         } elseif ($v == 'switch') {
                             //Code

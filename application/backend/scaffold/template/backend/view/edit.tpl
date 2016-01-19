@@ -115,7 +115,7 @@
           </div>
 {elseif $format eq 'switch'}
           <div class="item"><label class="item-title{if $null[$field] eq 'NO'} mark{/if}" for="{$field}">{$comments[$field]|default:$field}：</label><input type="checkbox" name="{$field}" id="{$field}" value="1"<?php if(${$table}->{$field} == 1) echo ' checked="checked"';?>/></div>
-{elseif $format eq 'disabled'}
+{elseif $format eq 'enabled'}
           <div class="item"><label class="item-title{if $null[$field] eq 'NO'} mark{/if}" for="{$field}">{$comments[$field]|default:$field}：</label><input type="checkbox" name="{$field}" id="{$field}" value="1"<?php if(${$table}->{$field} == 1) echo ' checked="checked"';?>/></div>
 {elseif $format eq 'textarea'}
           <div class="item"><label class="item-title{if $null[$field] eq 'NO'} mark{/if}" for="{$field}">{$comments[$field]|default:$field}：</label><div class="item-area"><textarea name="{$field}" id="{$field}" cols="45" rows="3"><?php echo ${$table}->{$field};?></textarea></div></div>
@@ -262,7 +262,7 @@ $().ready(function() {
                 equalTo:"#{$field}"
             }{if not $smarty.foreach.seek.last},{/if}
 
-{elseif $format neq 'attach' and $format neq 'image' and $format neq 'null' and $format neq 'disabled'}
+{elseif $format neq 'attach' and $format neq 'image' and $format neq 'null' and $format neq 'enabled'}
             {$field}: {
 {if $null[$field] eq 'NO'}
                 required: true,
@@ -317,7 +317,7 @@ $().ready(function() {
                 equalTo: "确认密码与密码不一致。"
             }{if not $smarty.foreach.seek.last},{/if}
 
-{elseif $format neq 'attach' and $format neq 'image' and $format neq 'null' and $format neq 'disabled'}
+{elseif $format neq 'attach' and $format neq 'image' and $format neq 'null' and $format neq 'enabled'}
             {$field}: {
 {if $null[$field] eq 'NO'}
                 required: "{$comments[$field]|default:$field}不能为空。",

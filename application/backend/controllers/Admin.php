@@ -53,7 +53,7 @@ class Admin extends QD_Controller {
                 'username' => $this->input->post('username'),
                 'password' => md5($this->input->post('password')),
                 'groups_id' => $this->input->post('groups'),
-                'disabled' => $this->input->post('disabled'),
+                'enabled' => $this->input->post('enabled'),
                 'addtime' => time()
             );
             if ($id = $this->admin->insert($data)) {
@@ -78,7 +78,7 @@ class Admin extends QD_Controller {
                     'username' => $this->input->post('username'),
                     'password' => md5($this->input->post('password')),
                     'groups_id' => $this->input->post('groups'),
-                    'disabled' => $this->input->post('disabled')
+                    'enabled' => $this->input->post('enabled')
                 );
                 if ($this->admin->update($id, $data)) {
                     $this->load->library('notice');
