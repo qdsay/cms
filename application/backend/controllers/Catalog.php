@@ -114,7 +114,7 @@ class Catalog extends QD_Controller {
             $this->data['current'] = $type;
 
             $this->load->model('Seo_model', 'seo');
-            $this->data['seo'] = $this->seo->get('catalog', $id);
+            $this->data['seo'] = $this->seo->get_caller('catalog', $id);
 
             $this->load->view('catalog/view',$this->data);
         }
@@ -180,7 +180,7 @@ class Catalog extends QD_Controller {
             $this->data['current'] = $type;
             $this->load->model('Catalog_model', 'catalog');
             $this->data['catalog'] = $this->catalog->get($id);
-            $this->data['seo'] = $this->seo->get('catalog', $id);
+            $this->data['seo'] = $this->seo->get_caller('catalog', $id);
             $this->load->view('catalog/seo',$this->data);
         }
     }
