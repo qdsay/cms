@@ -17,8 +17,7 @@
 	};
 	function preview($obj, opts) {
 		var show = $obj.parent().prev();
-
-		$obj.live('change', function(){
+		$obj.change(function(){
 			var src = show.find(".temp").attr("src");
 			var view = $('<div class="img-view"></div>');
 			show.empty().append(view);
@@ -45,17 +44,17 @@
 			});
 		});
 
-		$("#move-"+opts.field).live('click', function(){
-			var img = $obj.prev().children("img");
+		show.on("click", "#move-"+opts.field, function(){
+			var img = $(this).prev().children("img");
 			$("#"+img.attr("for")).val("");
 			if (img.hasClass("temp")) {
 				removeSrc(opts.ctrl, img.attr("src"));
 			}
-			$obj.parent().remove();
+			$(this).parent().remove();
 		});
 	};
 	function attach($obj, opts) {
-		$obj.live('change', function(){
+		$obj.change(function(){
 			$.ajaxFileUpload({
 				url: base_url+opts.ctrl+'/upload/'+opts.field,
 				secureuri: false,

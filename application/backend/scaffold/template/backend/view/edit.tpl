@@ -139,7 +139,7 @@
 <?php if(! empty(${$table}->{$field})):?>
                 <div class="img-view">
                   <span><img for="{$field}" src="/<?php echo ${$table}->{$field};?>"></span>
-                  <div class="img-move"></div>
+                  <div id="move-{$field}" class="img-move"></div>
                 </div>
 <?php endif;?>
               </div>

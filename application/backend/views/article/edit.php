@@ -59,7 +59,7 @@
 <?php if(! empty($article->image)):?>
                 <div class="img-view">
                   <span><img for="image" src="/<?php echo $article->image;?>"></span>
-                  <div class="img-move"></div>
+                  <div id="move-image" class="img-move"></div>
                 </div>
 <?php endif;?>
               </div>
