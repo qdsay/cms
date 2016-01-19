@@ -11,7 +11,7 @@
 ####新建数据库：qdsay  
 > CREATE DATABASE IF NOT EXISTS qdsay DEFAULT CHARSET utf8 COLLATE utf8_general_ci;  
 
-为数据库：qdsay赋予增删改查权限，并设置密码：123456  
+创建用户：qdmaster，并为数据库：qdsay 赋予增、删、改、查权限，并设置访问密码：123456  
 > GRANT SELECT,INSERT,UPDATE,DELETE  
 > ON qdsay.*  
 > TO qdmaster@localhost  
