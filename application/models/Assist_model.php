@@ -5,8 +5,8 @@ class Assist_model extends QD_Model {
     public $table = 'assist';
     public $primary_key = 'id';
 
-    public $attributes = 'id, title, aliases, contents, disabled, addtime, uptime';
-    public $list_attributes = 'id, title, aliases, disabled, addtime';
+    public $attributes = 'id, title, aliases, contents, enabled, addtime, uptime';
+    public $list_attributes = 'id, title, aliases, enabled, addtime';
 
     public function __construct()
     {

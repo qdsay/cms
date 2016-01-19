@@ -3,7 +3,7 @@
 class QD_Controller extends CI_Controller {
 
     public $data = array(
-        'disabled' => array('禁用', '启用')
+        'enabled' => array('禁用', '启用')
     );
 
     public $ctrl = '';
@@ -329,13 +329,13 @@ class QD_Controller extends CI_Controller {
      * @param   String
      * @return  Output a json string
      */
-    public function disabled($id = 0, $ctrl = '')
+    public function enabled($id = 0, $ctrl = '')
     {
         $result = 'error';
         if ($this->input->is_ajax_request() && is_numeric($id) && $id > 0) {
-            $disabled = $this->input->get('disabled');
+            $enabled = $this->input->get('enabled');
             $this->load->model($this->ctrl.'_model', 'model');
-            if($this->model->update($id, array('disabled' => $disabled))) {
+            if($this->model->update($id, array('enabled' => $enabled))) {
                 $result = 'success';
             }
         }

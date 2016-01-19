@@ -5,3 +5,4 @@ application/logs/*
 application/backend/cache/*
 application/backend/logs/*
 uploads/temp/*
+uploads/article/*
