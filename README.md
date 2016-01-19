@@ -39,7 +39,7 @@
 > \#sudo chmod -R 777 qdsay/application/backend/logs  
 
 ####开发版本目录权限
-勤道基础开发框架chu拥有一个高度自定义的代码生成器
+勤道基础开发框架拥有一个高度自定义的代码生成器
 #####前台目录权限
 > \#sudo chmod -R 777 qdsay/application/controllers  
 > \#sudo chmod -R 777 qdsay/application/models  
@@ -49,9 +49,6 @@
 > \#sudo chmod -R 777 qdsay/application/backend/controllers  
 > \#sudo chmod -R 777 qdsay/application/backend/models  
 > \#sudo chmod -R 777 qdsay/application/backend/views  
-> \#sudo chmod -R 777 qdsay/application/backend/scaffold/compiled  
-> \#sudo chmod -R 777 qdsay/application/backend/scaffold/template  
-> \#sudo chmod -R 777 qdsay/application/backend/scaffold/setup  
 
 注：项目发布后，修改上述目录权限为755，如下：
 > \#sudo chmod -R 755 qdsay/application/controllers  
@@ -60,6 +57,11 @@
 > \#sudo chmod -R 755 qdsay/application/backend/controllers  
 > \#sudo chmod -R 755 qdsay/application/backend/models  
 > \#sudo chmod -R 755 qdsay/application/backend/views  
-> \#sudo chmod -R 755 qdsay/application/backend/scaffold/template  
-> \#sudo chmod -R 755 qdsay/application/backend/scaffold/setup  
 
+##脚手架  
+> \#sudo chmod -R 777 qdsay/application/backend/scaffold/compiled  
+> \#sudo chmod -R 777 qdsay/application/backend/scaffold/template  
+> \#sudo chmod -R 777 qdsay/application/backend/scaffold/setup  
+
+###访问：  
+localhost/backend/scaffold  

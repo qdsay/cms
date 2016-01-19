@@ -68,12 +68,12 @@ html {font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#666666;overfl
             <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'password') echo ' selected="selected"';?> value="password">Password</option>
             <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'textarea') echo ' selected="selected"';?> value="textarea">TextArea</option>
             <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'catalog') echo ' selected="selected"';?> value="catalog">Catalog</option>
-            <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'select-from-db') echo ' selected="selected"';?> value="select-from-db">Select From DB</option>
-            <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'select-from-array') echo ' selected="selected"';?> value="select-from-array">Select From Array</option>
-            <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'radio-from-db') echo ' selected="selected"';?> value="radio-from-db">Radio From DB</option>
-            <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'radio-from-array') echo ' selected="selected"';?> value="radio-from-array">Radio From Array</option>
-            <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'checkbox-from-db') echo ' selected="selected"';?> value="checkbox-from-db">CheckBox From DB</option>
-            <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'checkbox-from-array') echo ' selected="selected"';?> value="checkbox-from-array">CheckBox From Array</option>
+            <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'select-from-db') echo ' selected="selected"';?> value="select-from-db">Select-From-DB</option>
+            <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'select-from-array') echo ' selected="selected"';?> value="select-from-array">Select-From-Array</option>
+            <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'radio-from-db') echo ' selected="selected"';?> value="radio-from-db">Radio-From-DB</option>
+            <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'radio-from-array') echo ' selected="selected"';?> value="radio-from-array">Radio-From-Array</option>
+            <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'checkbox-from-db') echo ' selected="selected"';?> value="checkbox-from-db">CheckBox-From-DB</option>
+            <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'checkbox-from-array') echo ' selected="selected"';?> value="checkbox-from-array">CheckBox-From-Array</option>
             <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'switch') echo ' selected="selected"';?> value="switch">Switch</option>
             <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'hidden') echo ' selected="selected"';?> value="hidden">Hidden</option>
             <option<?php if(array_key_exists($row['name'], $entry) && $entry[$row['name']] == 'attach') echo ' selected="selected"';?> value="attach">Attach</option>
