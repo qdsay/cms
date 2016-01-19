@@ -11,7 +11,7 @@
  Target Server Version : 50624
  File Encoding         : utf-8
 
- Date: 01/18/2016 23:46:33 PM
+ Date: 01/19/2016 11:24:09 AM
 */
 
 SET NAMES utf8;
@@ -60,7 +60,12 @@ CREATE TABLE `qd_article` (
   `disabled` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否启用',
   `addtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '添加时间',
   `uptime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `fk_catalog_id` (`catalog_id`),
+  KEY `fk_level` (`level`),
+  KEY `fk_disabled` (`disabled`),
+  KEY `fk_addtime` (`addtime`),
+  KEY `fk_uptime` (`uptime`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='文章';
 
 -- ----------------------------
@@ -83,7 +88,10 @@ CREATE TABLE `qd_assist` (
   `addtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '添加时间',
   `uptime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `fk_aliases` (`aliases`)
+  UNIQUE KEY `fk_aliases` (`aliases`),
+  KEY `fk_disabled` (`disabled`),
+  KEY `fk_addtime` (`addtime`),
+  KEY `fk_uptime` (`uptime`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='页面';
 
 -- ----------------------------
@@ -108,7 +116,13 @@ CREATE TABLE `qd_catalog` (
   `disabled` tinyint(1) unsigned DEFAULT '0' COMMENT '是否禁用',
   `uptime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`),
-  KEY `id` (`id`)
+  KEY `fk_father_id` (`father_id`),
+  KEY `fk_grade` (`grade`),
+  KEY `fk_sort` (`sort`),
+  KEY `fk_type` (`type`),
+  KEY `fk_aliases` (`aliases`),
+  KEY `fk_disabled` (`disabled`),
+  KEY `fk_uptime` (`uptime`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='åç±»ç®å½';
 
 -- ----------------------------
@@ -131,7 +145,9 @@ CREATE TABLE `qd_gallery` (
   `serial` tinyint(2) unsigned NOT NULL COMMENT '排序',
   `addtime` int(10) unsigned NOT NULL COMMENT '添加时间',
   PRIMARY KEY (`id`),
-  KEY `key_caller` (`caller`,`caller_id`) USING BTREE
+  KEY `fk_caller` (`caller`,`caller_id`) USING BTREE,
+  KEY `fk_serial` (`serial`),
+  KEY `fk_addtime` (`addtime`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='图集';
 
 -- ----------------------------
@@ -172,7 +188,9 @@ CREATE TABLE `qd_seo` (
   `description` varchar(255) DEFAULT '' COMMENT 'SEO描述',
   `addtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '添加时间',
   `uptime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  PRIMARY KEY (`caller`,`caller_id`)
+  PRIMARY KEY (`caller`,`caller_id`),
+  KEY `fk_addtime` (`addtime`),
+  KEY `fk_uptime` (`uptime`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -191,7 +209,8 @@ CREATE TABLE `qd_setup` (
   `item` char(32) NOT NULL COMMENT '项目',
   `alias` char(32) NOT NULL COMMENT '别名',
   `content` varchar(255) DEFAULT '' COMMENT '内容',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `fk_alias` (`alias`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='系统';
 
 -- ----------------------------

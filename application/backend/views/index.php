@@ -22,11 +22,11 @@
     <div class="clear"></div>
     <div id="panel">
       <div id="subpanel">
-<?php if (in_array(true, $writeable)): ?>
+<?php if (in_array(false, $writeable)): ?>
         <div class="warning">
           <h3>警告：</h3>
 <?php foreach($writeable as $path => $val):?>
-<?php if ($val === true): ?>
+<?php if ($val === false): ?>
           <p><?php echo $dir[$path] .' '. $path;?> 目录不可写</p>
 <?php endif; ?>
 <?php endforeach;?>
