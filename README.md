@@ -8,7 +8,7 @@
 系统设计的初衷之一就是不增加系统功能实现以外的任何代码，保持勤道CMS的简洁，易用。
 
 ###导入数据库
-新建数据库：qdsay  
+####新建数据库：qdsay  
 CREATE DATABASE IF NOT EXISTS qdsay DEFAULT CHARSET utf8 COLLATE utf8_general_ci;  
 为数据库：qdsay赋予增删改查权限，并设置密码：123456  
 GRANT SELECT,INSERT,UPDATE,DELETE  
@@ -18,6 +18,12 @@ IDENTIFIED BY '123456';
 导入数据库表结构：  
 USE qdsay;  
 SOURCE ./database/qdsay.sql  
+
+####修改数据库配置
+> \#vi application/config/database.php  
+> \#vi application/backend/config/database.php  
+> \#vi application/config/config.php  
+> \#vi application/backend/config/config.php  
 
 ###文件权限
 前台程序入口：qdsay/index.php  
@@ -54,3 +60,4 @@ SOURCE ./database/qdsay.sql
 > \#sudo chmod -R 755 qdsay/application/backend/views  
 > \#sudo chmod -R 755 qdsay/application/backend/scaffold/template  
 > \#sudo chmod -R 755 qdsay/application/backend/scaffold/setup  
+
