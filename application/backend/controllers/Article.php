@@ -84,8 +84,6 @@ class Article extends QD_Controller {
                 'title' => $this->input->post('title'),
                 'catalog_id' => $this->input->post('catalog_id'),
                 'image' => $this->resave('image'),
-                'tags' => qd_cleanup($this->input->post('tags')),
-                'summary' => $this->input->post('summary'),
                 'contents' => $this->input->post('contents'),
                 'author' => $this->input->post('author'),
                 'origin' => $this->input->post('origin'),
@@ -99,8 +97,6 @@ class Article extends QD_Controller {
                 $this->load->model('Seo_model', 'seo');
                 $this->seo->set('article', $id, array(
                     'title' => $data['title'],
-                    'keywords' => $data['tags'],
-                    'description' => $data['summary'],
                     'addtime' => $data['addtime']
                 ));
                 //通知
@@ -133,8 +129,6 @@ class Article extends QD_Controller {
                     'title' => $this->input->post('title'),
                     'catalog_id' => $this->input->post('catalog_id'),
                     'image' => $this->resave('image', $article->image),
-                    'tags' => qd_cleanup($this->input->post('tags')),
-                    'summary' => $this->input->post('summary'),
                     'contents' => $this->input->post('contents'),
                     'author' => $this->input->post('author'),
                     'origin' => $this->input->post('origin'),

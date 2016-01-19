@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>勤道CMS - 后台管理</title>
+<title>勤道软件 - 后台管理</title>
 <link href="<?php echo base_url('css/style.css')?>" rel="stylesheet" type="text/css" />
 <link href="<?php echo base_url('css/center.css')?>" rel="stylesheet" type="text/css" />
 <script src="<?php echo base_url('js/jquery.min.js')?>" type="text/javascript"></script>
@@ -70,8 +70,6 @@
               <div class="img-info">限2M.</div>
             </div>
           </div>
-          <div class="item"><label class="item-title mark" for="tags">标签：</label><input type="text" class="input-txt long" name="tags" id="tags" value="<?php echo $article->tags;?>" /></div>
-          <div class="item"><label class="item-title mark" for="summary">摘要：</label><div class="item-area"><textarea name="summary" id="summary" cols="45" rows="3"><?php echo $article->summary;?></textarea></div></div>
           <div class="item editor"><label class="item-title" for="contents">内容：</label><div class="item-area">
             <script name="contents" id="contents" type="text/plain" style="width:100%;height:300px;"><?php echo $article->contents;?></script>
           </div></div>
@@ -120,14 +118,6 @@ $().ready(function() {
                 required: true,
                 min: 1
             },
-            tags: {
-                required: true,
-                maxlength: 255
-            },
-            summary: {
-                required: true,
-                maxlength: 255
-            },
             contents: {
             },
             author: {
@@ -145,14 +135,6 @@ $().ready(function() {
             catalog_id: {
                 required: "分类不能为空。",
                 min: "请选择分类"
-            },
-            tags: {
-                required: "标签不能为空。",
-                maxlength: "长度不能超过255"
-            },
-            summary: {
-                required: "摘要不能为空。",
-                maxlength: "长度不能超过255"
             },
             contents: {
             },

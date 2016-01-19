@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>勤道CMS - 后台管理</title>
+<title>勤道软件 - 后台管理</title>
 <link href="<?php echo base_url('css/style.css')?>" rel="stylesheet" type="text/css" />
 <link href="<?php echo base_url('css/center.css')?>" rel="stylesheet" type="text/css" />
 <script src="<?php echo base_url('js/jquery.min.js')?>" type="text/javascript"></script>
@@ -45,14 +45,6 @@
           <tr>
             <th width="100px;" scope="row">文章配图：</th>
             <td><?php if ($article->image):?><a href="/<?php echo $article->image;?>" target="_blank"><img width="24" height="24" src="/<?php echo $article->image;?>"></a><?php endif;?></td>
-          </tr>
-          <tr>
-            <th width="100px;" scope="row">标签：</th>
-            <td><?php echo $article->tags;?></td>
-          </tr>
-          <tr>
-            <th width="100px;" scope="row">摘要：</th>
-            <td><?php echo $article->summary;?></td>
           </tr>
           <tr>
             <th width="100px;" scope="row">内容：</th>

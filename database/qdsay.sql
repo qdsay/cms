@@ -11,7 +11,7 @@
  Target Server Version : 50624
  File Encoding         : utf-8
 
- Date: 01/19/2016 11:24:09 AM
+ Date: 01/19/2016 16:16:28 PM
 */
 
 SET NAMES utf8;
@@ -51,8 +51,6 @@ CREATE TABLE `qd_article` (
   `title` varchar(128) NOT NULL COMMENT '标题',
   `catalog_id` smallint(5) unsigned NOT NULL COMMENT '分类',
   `image` varchar(64) DEFAULT '' COMMENT '文章配图',
-  `tags` varchar(255) NOT NULL COMMENT '标签',
-  `summary` varchar(255) NOT NULL COMMENT '摘要',
   `contents` text COMMENT '内容',
   `author` varchar(32) DEFAULT NULL COMMENT '作者',
   `origin` varchar(64) DEFAULT NULL COMMENT '信息来源',
@@ -72,7 +70,7 @@ CREATE TABLE `qd_article` (
 --  Records of `qd_article`
 -- ----------------------------
 BEGIN;
-INSERT INTO `qd_article` VALUES ('1', '勤道基础开发框架开源', '1', 'uploads/article/2016/0117/26994820975.jpeg', '勤道,php,开发框架', '勤道基础开发框架开源', '<p>勤道基础开发框架开源</p>', '勤道', '勤道', '1', '1', '1453026994', '2016-01-17 18:36:34');
+INSERT INTO `qd_article` VALUES ('1', '勤道基础开发框架开源', '1', 'uploads/article/2016/0117/26994820975.jpeg', '<p>勤道基础开发框架开源</p>', '勤道', '勤道', '1', '1', '1453026994', '2016-01-17 18:36:34');
 COMMIT;
 
 -- ----------------------------
@@ -129,7 +127,7 @@ CREATE TABLE `qd_catalog` (
 --  Records of `qd_catalog`
 -- ----------------------------
 BEGIN;
-INSERT INTO `qd_catalog` VALUES ('1', '0', '0', '0', 'article', '企业新闻', '', '0', '2016-01-17 15:00:51');
+INSERT INTO `qd_catalog` VALUES ('1', '0', '0', '0', 'article', '专业解读', 'professor', '1', '2016-01-19 15:46:53');
 COMMIT;
 
 -- ----------------------------
@@ -197,7 +195,7 @@ CREATE TABLE `qd_seo` (
 --  Records of `qd_seo`
 -- ----------------------------
 BEGIN;
-INSERT INTO `qd_seo` VALUES ('assist', '1', '关于我们', '勤道CMS,勤道开发框架', '勤道CMS', '1453131908', '2016-01-18 23:45:31'), ('article', '1', '勤道基础开发框架开源', '勤道,php,开发框架', '勤道基础开发框架开源', '1453026994', '2016-01-17 18:36:34'), ('article', '2', '测试啦', '测试', '测试', '1452620006', '2016-01-13 01:33:26');
+INSERT INTO `qd_seo` VALUES ('assist', '1', '关于我们', '勤道CMS,勤道开发框架', '勤道CMS', '1453131908', '2016-01-18 23:45:31'), ('article', '1', '勤道基础开发框架开源', '勤道,php,开发框架', '勤道基础开发框架开源', '1453026994', '2016-01-17 18:36:34'), ('article', '2', '测试啦', '测试', '测试', '1452620006', '2016-01-13 01:33:26'), ('catalog', '1', '专业解读', '专业', '专业', '1453189914', '2016-01-19 15:51:54');
 COMMIT;
 
 -- ----------------------------

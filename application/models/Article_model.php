@@ -5,7 +5,7 @@ class Article_model extends QD_Model {
     public $table = 'article';
     public $primary_key = 'id';
 
-    public $attributes = 'id, title, catalog_id, image, tags, summary, contents, author, origin, level, disabled, addtime, uptime';
+    public $attributes = 'id, title, catalog_id, image, contents, author, origin, level, disabled, addtime, uptime';
     public $list_attributes = 'id, title, catalog_id, image, author, disabled, addtime';
 
     public function __construct()

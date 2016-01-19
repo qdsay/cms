@@ -387,7 +387,7 @@ class Scaffold extends CI_Controller {
         $smarty->assign('hidden', $hidden);
         $smarty->assign('integer', $integer);
 
-        $path = $this->curpath.'views/'.ucfirst($table);
+        $path = $this->curpath.'views/'.$table;
         if(! file_exists($path)) mkdir($path, 0777);
 
         $actions = array('list'=>'select', 'view'=>'select');

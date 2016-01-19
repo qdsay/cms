@@ -39,10 +39,10 @@
 <div class="wrapper">
 
 </div>
-<!--header--->
+<!--footer--->
 <?php echo '<?php'; ?>
  $this->load->view('footer');<?php echo '?>'; ?>
 
-<!--header end-->
+<!--footer end-->
 </body>
 </html>

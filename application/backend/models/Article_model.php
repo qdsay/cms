@@ -5,7 +5,7 @@ class Article_model extends QD_Model {
     public $table = 'article';
     public $primary_key = 'id';
 
-    public $attributes = 'id, title, catalog_id, image, tags, summary, contents, author, origin, level, disabled, addtime, uptime';
+    public $attributes = 'id, title, catalog_id, image, contents, author, origin, level, disabled, addtime, uptime';
     public $list_attributes = 'id, title, catalog_id, image, author, disabled, addtime';
 
     public $rules = array(
@@ -18,16 +18,6 @@ class Article_model extends QD_Model {
             'field'   => 'catalog_id',
             'label'   => 'catalog_id',
             'rules'   => 'is_natural_no_zero|required'
-        ),
-        array(
-            'field'   => 'tags',
-            'label'   => 'tags',
-            'rules'   => 'trim|max_length[255]|required'
-        ),
-        array(
-            'field'   => 'summary',
-            'label'   => 'summary',
-            'rules'   => 'trim|max_length[255]|required'
         ),
         array(
             'field'   => 'author',
