@@ -1,7 +1,2 @@
 .DS_Store
 .DS_Store?
-application/cache/*
-application/logs/*
-application/backend/cache/*
-application/backend/logs/*
-uploads/temp/*
