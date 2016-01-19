@@ -11,7 +11,7 @@
  Target Server Version : 50624
  File Encoding         : utf-8
 
- Date: 01/19/2016 16:16:28 PM
+ Date: 01/19/2016 23:36:18 PM
 */
 
 SET NAMES utf8;
@@ -29,7 +29,7 @@ CREATE TABLE `qd_admin` (
   `last_login_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后一次登录时间',
   `last_login_ip` char(15) NOT NULL COMMENT '最后一次登录IP',
   `addtime` int(10) unsigned NOT NULL COMMENT '添加时间',
-  `disabled` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '状态',
+  `enabled` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '状态',
   PRIMARY KEY (`id`),
   KEY `groups` (`groups_id`),
   CONSTRAINT `fk_groups_id` FOREIGN KEY (`groups_id`) REFERENCES `qd_groups` (`id`) ON DELETE SET NULL ON UPDATE NO ACTION
@@ -55,13 +55,13 @@ CREATE TABLE `qd_article` (
   `author` varchar(32) DEFAULT NULL COMMENT '作者',
   `origin` varchar(64) DEFAULT NULL COMMENT '信息来源',
   `level` tinyint(1) unsigned DEFAULT '9' COMMENT '推荐级别',
-  `disabled` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否启用',
+  `enabled` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '是否启用',
   `addtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '添加时间',
   `uptime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`),
   KEY `fk_catalog_id` (`catalog_id`),
   KEY `fk_level` (`level`),
-  KEY `fk_disabled` (`disabled`),
+  KEY `fk_enabled` (`enabled`) USING BTREE,
   KEY `fk_addtime` (`addtime`),
   KEY `fk_uptime` (`uptime`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='文章';
@@ -82,12 +82,12 @@ CREATE TABLE `qd_assist` (
   `title` varchar(128) NOT NULL COMMENT '标题',
   `aliases` char(32) NOT NULL COMMENT '别名',
   `contents` text COMMENT '内容',
-  `disabled` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否启用',
+  `enabled` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '是否启用',
   `addtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '添加时间',
   `uptime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `fk_aliases` (`aliases`),
-  KEY `fk_disabled` (`disabled`),
+  KEY `fk_enabled` (`enabled`) USING BTREE,
   KEY `fk_addtime` (`addtime`),
   KEY `fk_uptime` (`uptime`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='页面';
@@ -111,7 +111,7 @@ CREATE TABLE `qd_catalog` (
   `type` enum('article') NOT NULL DEFAULT 'article' COMMENT '类型',
   `name` char(32) NOT NULL COMMENT '名称',
   `aliases` char(32) NOT NULL DEFAULT '' COMMENT '别名',
-  `disabled` tinyint(1) unsigned DEFAULT '0' COMMENT '是否禁用',
+  `enabled` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '是否禁用',
   `uptime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`),
   KEY `fk_father_id` (`father_id`),
@@ -119,7 +119,7 @@ CREATE TABLE `qd_catalog` (
   KEY `fk_sort` (`sort`),
   KEY `fk_type` (`type`),
   KEY `fk_aliases` (`aliases`),
-  KEY `fk_disabled` (`disabled`),
+  KEY `fk_enabled` (`enabled`) USING BTREE,
   KEY `fk_uptime` (`uptime`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='åç±»ç®å½';
 
@@ -127,7 +127,7 @@ CREATE TABLE `qd_catalog` (
 --  Records of `qd_catalog`
 -- ----------------------------
 BEGIN;
-INSERT INTO `qd_catalog` VALUES ('1', '0', '0', '0', 'article', '专业解读', 'professor', '1', '2016-01-19 15:46:53');
+INSERT INTO `qd_catalog` VALUES ('1', '0', '0', '0', 'article', '专业解读', 'professor', '1', '2016-01-19 16:57:22');
 COMMIT;
 
 -- ----------------------------
@@ -163,7 +163,7 @@ CREATE TABLE `qd_groups` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `name` char(16) NOT NULL COMMENT '用户组',
   `auth` varchar(21785) DEFAULT NULL COMMENT '权限',
-  `disabled` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否启用',
+  `enabled` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '是否启用',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='用户组';
 
