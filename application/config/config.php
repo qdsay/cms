@@ -23,7 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://card.qdshuo.com/';
+$config['base_url'] = 'http://dev.qdsay.com/';
+$config['static_url'] = 'http://dev.qdsay.com/';
 
 /*
 |--------------------------------------------------------------------------

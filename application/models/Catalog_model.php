@@ -19,11 +19,10 @@ class Catalog_model extends QD_Model {
      * @param   String
      * @return  Array
      */
-    public function get_option($where = array(), $order = '') {
+    public function get_catalog($where = array()) {
         $result = array();
         $this->db->select($this->list_attributes);
         if (!empty($where)) $this->db->where($where);
-        if (!empty($order)) $this->db->order_by($order);
         $this->db->order_by('father_id asc, sort asc');
         $query = $this->db->get($this->table);
         if ($query->num_rows() > 0) {
