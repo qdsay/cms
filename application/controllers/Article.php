@@ -62,9 +62,6 @@ class Article extends QD_Controller {
             $this->data['article'] = $this->article->get($id);
             $this->data['catalog'] = $this->catalog('article');
 
-            $this->load->model('Seo_model', 'seo');
-            $this->data['seo'] = $this->seo->get('article', $id);
-
             $this->load->view('article/view',$this->data);
         }
     }

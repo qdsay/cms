@@ -123,10 +123,10 @@
         <form action="<?php echo '<?php'; ?>
  echo base_url('<?php echo $this->_var['table']; ?>/edit/'.$<?php echo $this->_var['table']; ?>->id)<?php echo '?>'; ?>
 " method="post" name="myform" id="myform">
-<?php $_from = $this->_var['entry']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_85381500_1453191028');if (count($_from)):
-    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_85381500_1453191028']):
+<?php $_from = $this->_var['entry']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_23532500_1453275574');if (count($_from)):
+    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_23532500_1453275574']):
 ?>
-<?php if ($this->_var['format_0_85381500_1453191028'] == 'catalog'): ?>
+<?php if ($this->_var['format_0_23532500_1453275574'] == 'catalog'): ?>
           <div class="item"><label class="item-title<?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?> mark<?php endif; ?>" for="<?php echo $this->_var['field']; ?>"><?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>：</label>
             <select id="<?php echo substr($this->_var['field'], 0, strrpos($this->_var['field'], "_id")); ?>" default="<?php echo '<?php'; ?>
  echo qd_trace_catalog($<?php echo substr($this->_var['field'], 0, strrpos($this->_var['field'], "_id")); ?>, $<?php echo $this->_var['table']; ?>-><?php echo $this->_var['field']; ?>);<?php echo '?>'; ?>
@@ -137,7 +137,7 @@
  echo $<?php echo $this->_var['table']; ?>-><?php echo $this->_var['field']; ?>;<?php echo '?>'; ?>
 " />
           </div>
-<?php elseif ($this->_var['format_0_85381500_1453191028'] == 'select-from-db'): ?>
+<?php elseif ($this->_var['format_0_23532500_1453275574'] == 'select-from-db'): ?>
           <div class="item"><label class="item-title<?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?> mark<?php endif; ?>" for="<?php echo $this->_var['field']; ?>"><?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>：</label>
             <select name="<?php echo $this->_var['field']; ?>" id="<?php echo $this->_var['field']; ?>">
               <option value=""><?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?></option>
@@ -156,7 +156,7 @@
 
             </select>
           </div>
-<?php elseif ($this->_var['format_0_85381500_1453191028'] == 'select-from-array'): ?>
+<?php elseif ($this->_var['format_0_23532500_1453275574'] == 'select-from-array'): ?>
           <div class="item"><label class="item-title<?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?> mark<?php endif; ?>" for="<?php echo $this->_var['field']; ?>"><?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>：</label>
             <select name="<?php echo $this->_var['field']; ?>" id="<?php echo $this->_var['field']; ?>">
               <option value=""><?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?></option>
@@ -175,7 +175,7 @@
 
             </select>
           </div>
-<?php elseif ($this->_var['format_0_85381500_1453191028'] == 'radio-from-db'): ?>
+<?php elseif ($this->_var['format_0_23532500_1453275574'] == 'radio-from-db'): ?>
           <div class="item"><label class="item-title<?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?> mark<?php endif; ?>" for="<?php echo $this->_var['field']; ?>"><?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>：</label>
 <?php echo '<?php'; ?>
  foreach($<?php echo substr($this->_var['field'], 0, strrpos($this->_var['field'], "_id")); ?> as $k => $v):<?php echo '?>'; ?>
@@ -191,7 +191,7 @@
  endforeach;<?php echo '?>'; ?>
 
           </div>
-<?php elseif ($this->_var['format_0_85381500_1453191028'] == 'radio-from-array'): ?>
+<?php elseif ($this->_var['format_0_23532500_1453275574'] == 'radio-from-array'): ?>
           <div class="item"><label class="item-title<?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?> mark<?php endif; ?>" for="<?php echo $this->_var['field']; ?>"><?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>：</label>
 <?php echo '<?php'; ?>
  foreach($<?php echo $this->_var['field']; ?> as $k => $v):<?php echo '?>'; ?>
@@ -207,7 +207,7 @@
  endforeach;<?php echo '?>'; ?>
 
           </div>
-<?php elseif ($this->_var['format_0_85381500_1453191028'] == 'checkbox-from-db'): ?>
+<?php elseif ($this->_var['format_0_23532500_1453275574'] == 'checkbox-from-db'): ?>
           <div class="item"><label class="item-title<?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?> mark<?php endif; ?>" for="<?php echo $this->_var['field']; ?>"><?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>：</label>
 <?php echo '<?php'; ?>
  foreach($<?php echo substr($this->_var['field'], 0, strrpos($this->_var['field'], "_id")); ?> as $k => $v):<?php echo '?>'; ?>
@@ -223,7 +223,7 @@
  endforeach;<?php echo '?>'; ?>
 
           </div>
-<?php elseif ($this->_var['format_0_85381500_1453191028'] == 'checkbox-from-array'): ?>
+<?php elseif ($this->_var['format_0_23532500_1453275574'] == 'checkbox-from-array'): ?>
           <div class="item"><label class="item-title<?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?> mark<?php endif; ?>" for="<?php echo $this->_var['field']; ?>"><?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>：</label>
 <?php echo '<?php'; ?>
  foreach($<?php echo $this->_var['field']; ?> as $k => $v):<?php echo '?>'; ?>
@@ -239,25 +239,25 @@
  endforeach;<?php echo '?>'; ?>
 
           </div>
-<?php elseif ($this->_var['format_0_85381500_1453191028'] == 'switch'): ?>
+<?php elseif ($this->_var['format_0_23532500_1453275574'] == 'switch'): ?>
           <div class="item"><label class="item-title<?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?> mark<?php endif; ?>" for="<?php echo $this->_var['field']; ?>"><?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>：</label><input type="checkbox" name="<?php echo $this->_var['field']; ?>" id="<?php echo $this->_var['field']; ?>" value="1"<?php echo '<?php'; ?>
  if($<?php echo $this->_var['table']; ?>-><?php echo $this->_var['field']; ?> == 1) echo ' checked="checked"';<?php echo '?>'; ?>
 /></div>
-<?php elseif ($this->_var['format_0_85381500_1453191028'] == 'enabled'): ?>
+<?php elseif ($this->_var['format_0_23532500_1453275574'] == 'enabled'): ?>
           <div class="item"><label class="item-title<?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?> mark<?php endif; ?>" for="<?php echo $this->_var['field']; ?>"><?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>：</label><input type="checkbox" name="<?php echo $this->_var['field']; ?>" id="<?php echo $this->_var['field']; ?>" value="1"<?php echo '<?php'; ?>
  if($<?php echo $this->_var['table']; ?>-><?php echo $this->_var['field']; ?> == 1) echo ' checked="checked"';<?php echo '?>'; ?>
 /></div>
-<?php elseif ($this->_var['format_0_85381500_1453191028'] == 'textarea'): ?>
+<?php elseif ($this->_var['format_0_23532500_1453275574'] == 'textarea'): ?>
           <div class="item"><label class="item-title<?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?> mark<?php endif; ?>" for="<?php echo $this->_var['field']; ?>"><?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>：</label><div class="item-area"><textarea name="<?php echo $this->_var['field']; ?>" id="<?php echo $this->_var['field']; ?>" cols="45" rows="3"><?php echo '<?php'; ?>
  echo $<?php echo $this->_var['table']; ?>-><?php echo $this->_var['field']; ?>;<?php echo '?>'; ?>
 </textarea></div></div>
-<?php elseif ($this->_var['format_0_85381500_1453191028'] == 'editor'): ?>
+<?php elseif ($this->_var['format_0_23532500_1453275574'] == 'editor'): ?>
           <div class="item editor"><label class="item-title<?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?> mark<?php endif; ?>" for="<?php echo $this->_var['field']; ?>"><?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>：</label><div class="item-area">
             <script name="<?php echo $this->_var['field']; ?>" id="<?php echo $this->_var['field']; ?>" type="text/plain" style="width:100%;height:300px;"><?php echo '<?php'; ?>
  echo $<?php echo $this->_var['table']; ?>-><?php echo $this->_var['field']; ?>;<?php echo '?>'; ?>
 </script>
           </div></div>
-<?php elseif ($this->_var['format_0_85381500_1453191028'] == 'attach'): ?>
+<?php elseif ($this->_var['format_0_23532500_1453275574'] == 'attach'): ?>
           <div class="item"><label class="item-title<?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?> mark<?php endif; ?>" for="<?php echo $this->_var['field']; ?>"><?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>：</label><div class="item-attach">
             <input type="file" name="upload_<?php echo $this->_var['field']; ?>" id="upload_<?php echo $this->_var['field']; ?>" class="attach" readonly="readonly" />
             <input type="text" class="input-txt long" name="<?php echo $this->_var['field']; ?>" id="<?php echo $this->_var['field']; ?>" />
@@ -272,7 +272,7 @@
  endif;<?php echo '?>'; ?>
 
             </div></div>
-<?php elseif ($this->_var['format_0_85381500_1453191028'] == 'image'): ?>
+<?php elseif ($this->_var['format_0_23532500_1453275574'] == 'image'): ?>
           <div class="item"><label class="item-title<?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?> mark<?php endif; ?>" for="<?php echo $this->_var['field']; ?>"><?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>：</label>
             <div class="item-area">
               <div class="img-show">
@@ -298,18 +298,18 @@
               <div class="img-info">限<?php echo $this->_var['configs'][$this->_var['field']]; ?>M.</div>
             </div>
           </div>
-<?php elseif ($this->_var['format_0_85381500_1453191028'] == 'text'): ?>
+<?php elseif ($this->_var['format_0_23532500_1453275574'] == 'text'): ?>
           <div class="item"><label class="item-title<?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?> mark<?php endif; ?>" for="<?php echo $this->_var['field']; ?>"><?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>：</label><input type="text" class="input-txt long" name="<?php echo $this->_var['field']; ?>" id="<?php echo $this->_var['field']; ?>" value="<?php echo '<?php'; ?>
  echo $<?php echo $this->_var['table']; ?>-><?php echo $this->_var['field']; ?>;<?php echo '?>'; ?>
 " /></div>
-<?php elseif ($this->_var['format_0_85381500_1453191028'] == 'password'): ?>
+<?php elseif ($this->_var['format_0_23532500_1453275574'] == 'password'): ?>
           <div class="item"><label class="item-title<?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?> mark<?php endif; ?>" for="<?php echo $this->_var['field']; ?>"><?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>：</label><input type="password" class="input-txt long" name="<?php echo $this->_var['field']; ?>" id="<?php echo $this->_var['field']; ?>" /></div>
           <div class="item"><label class="item-title<?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?> mark<?php endif; ?>" for="re<?php echo $this->_var['field']; ?>">确认<?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>：</label><input type="password" class="input-txt long" name="re<?php echo $this->_var['field']; ?>" id="re<?php echo $this->_var['field']; ?>" /></div>
-<?php elseif ($this->_var['format_0_85381500_1453191028'] == 'date'): ?>
+<?php elseif ($this->_var['format_0_23532500_1453275574'] == 'date'): ?>
           <div class="item"><label class="item-title<?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?> mark<?php endif; ?>" for="<?php echo $this->_var['field']; ?>"><?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>：</label><input type="text" class="input-txt long" style="z-index:1000;position:relative;" name="<?php echo $this->_var['field']; ?>" id="<?php echo $this->_var['field']; ?>" value="<?php echo '<?php'; ?>
  echo $<?php echo $this->_var['table']; ?>-><?php echo $this->_var['field']; ?>;<?php echo '?>'; ?>
 " /></div>
-<?php elseif ($this->_var['format_0_85381500_1453191028'] == 'position'): ?>
+<?php elseif ($this->_var['format_0_23532500_1453275574'] == 'position'): ?>
           <div class="item"><label class="item-title<?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?> mark<?php endif; ?>" for="<?php echo $this->_var['field']; ?>">区域：</label>
 <?php $_from = $this->_var['position']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format');$this->_foreach['seek'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['seek']['total'] > 0):
@@ -325,8 +325,8 @@ if ($this->_foreach['seek']['total'] > 0):
 <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
           <div class="item"><label class="item-title" for="btn">&nbsp;</label>
 <?php if ($this->_var['hidden']): ?>
-<?php $_from = $this->_var['hidden']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_85489700_1453191028');if (count($_from)):
-    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_85489700_1453191028']):
+<?php $_from = $this->_var['hidden']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_23657200_1453275574');if (count($_from)):
+    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_23657200_1453275574']):
 ?>
             <input type="hidden" name="<?php echo $this->_var['field']; ?>" id="<?php echo $this->_var['field']; ?>" value="<?php echo '<?php'; ?>
  echo $<?php echo $this->_var['table']; ?>-><?php echo $this->_var['field']; ?>;<?php echo '?>'; ?>
@@ -349,8 +349,8 @@ var base_url = '<?php echo '<?php'; ?>
 $().ready(function() {
 <?php if ($this->_var['catalog']): ?>
 
-<?php $_from = $this->_var['catalog']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_85494100_1453191028');if (count($_from)):
-    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_85494100_1453191028']):
+<?php $_from = $this->_var['catalog']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_23662300_1453275574');if (count($_from)):
+    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_23662300_1453275574']):
 ?>
     $( "#<?php echo substr($this->_var['field'], 0, strrpos($this->_var['field'], "_id")); ?>" ).catalog(<?php echo '<?php'; ?>
  echo qd_format_catalog($<?php echo substr($this->_var['field'], 0, strrpos($this->_var['field'], "_id")); ?>);<?php echo '?>'; ?>
@@ -359,10 +359,10 @@ $().ready(function() {
 <?php endif; ?>
 <?php if ($this->_var['upload']): ?>
 
-<?php $_from = $this->_var['upload']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_85497900_1453191028');if (count($_from)):
-    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_85497900_1453191028']):
+<?php $_from = $this->_var['upload']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_23666800_1453275574');if (count($_from)):
+    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_23666800_1453275574']):
 ?>
-<?php if ($this->_var['format_0_85497900_1453191028'] == 'image'): ?>
+<?php if ($this->_var['format_0_23666800_1453275574'] == 'image'): ?>
     $("#upload_<?php echo $this->_var['field']; ?>").uploads({ctrl:'<?php echo $this->_var['table']; ?>',field:'<?php echo $this->_var['field']; ?>',preview:true});
 <?php else: ?>
     $("#upload_<?php echo $this->_var['field']; ?>").uploads({ctrl:'<?php echo $this->_var['table']; ?>',field:'<?php echo $this->_var['field']; ?>'});
@@ -371,16 +371,16 @@ $().ready(function() {
 
 <?php endif; ?>
 <?php if ($this->_var['editor']): ?>
-<?php $_from = $this->_var['editor']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_85503800_1453191028');if (count($_from)):
-    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_85503800_1453191028']):
+<?php $_from = $this->_var['editor']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_23673600_1453275574');if (count($_from)):
+    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_23673600_1453275574']):
 ?>
     var <?php echo $this->_var['field']; ?> = UE.getEditor('<?php echo $this->_var['field']; ?>');
 <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
 
 <?php endif; ?>
 <?php if ($this->_var['date']): ?>
-<?php $_from = $this->_var['date']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_85507100_1453191028');if (count($_from)):
-    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_85507100_1453191028']):
+<?php $_from = $this->_var['date']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_23677500_1453275574');if (count($_from)):
+    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_23677500_1453275574']):
 ?>
     $( "#<?php echo $this->_var['field']; ?>" ).datepicker({
         changeMonth: true,
@@ -391,12 +391,12 @@ $().ready(function() {
 <?php endif; ?>
 <?php if ($this->_var['position']): ?>
     $.region({
-<?php $_from = $this->_var['position']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_85510200_1453191028');if (count($_from)):
-    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_85510200_1453191028']):
+<?php $_from = $this->_var['position']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_23681000_1453275574');if (count($_from)):
+    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_23681000_1453275574']):
 ?>
-<?php if ($this->_var['format_0_85510200_1453191028'] == 'position-province'): ?>
-      province:$("#<?php echo $this->_var['field']; ?>")<?php elseif ($this->_var['format_0_85510200_1453191028'] == 'position-city'): ?>,
-      city:$("#<?php echo $this->_var['field']; ?>")<?php elseif ($this->_var['format_0_85510200_1453191028'] == 'position-district'): ?>,
+<?php if ($this->_var['format_0_23681000_1453275574'] == 'position-province'): ?>
+      province:$("#<?php echo $this->_var['field']; ?>")<?php elseif ($this->_var['format_0_23681000_1453275574'] == 'position-city'): ?>,
+      city:$("#<?php echo $this->_var['field']; ?>")<?php elseif ($this->_var['format_0_23681000_1453275574'] == 'position-district'): ?>,
       district:$("#<?php echo $this->_var['field']; ?>")
 <?php endif; ?>
 <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
@@ -407,8 +407,8 @@ $().ready(function() {
     $.validator.setDefaults({
         submitHandler: function(myform) {
 <?php if ($this->_var['editor']): ?>
-<?php $_from = $this->_var['editor']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_85517400_1453191028');if (count($_from)):
-    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_85517400_1453191028']):
+<?php $_from = $this->_var['editor']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_23689300_1453275574');if (count($_from)):
+    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_23689300_1453275574']):
 ?>
             <?php echo $this->_var['field']; ?>.sync();
 <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
@@ -418,12 +418,12 @@ $().ready(function() {
     });
     $("#myform").validate({
         rules: {
-<?php $_from = $this->_var['verify']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_85519800_1453191028');$this->_foreach['seek'] = array('total' => count($_from), 'iteration' => 0);
+<?php $_from = $this->_var['verify']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_23692200_1453275574');$this->_foreach['seek'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['seek']['total'] > 0):
-    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_85519800_1453191028']):
+    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_23692200_1453275574']):
         $this->_foreach['seek']['iteration']++;
 ?>
-<?php if ($this->_var['format_0_85519800_1453191028'] == 'password'): ?>
+<?php if ($this->_var['format_0_23692200_1453275574'] == 'password'): ?>
             <?php echo $this->_var['field']; ?>: {
 <?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?>
                 required: true,
@@ -446,23 +446,23 @@ if ($this->_foreach['seek']['total'] > 0):
                 equalTo:"#<?php echo $this->_var['field']; ?>"
             }<?php if (! ($this->_foreach['seek']['iteration'] == $this->_foreach['seek']['total'])): ?>,<?php endif; ?>
 
-<?php elseif ($this->_var['format_0_85519800_1453191028'] != 'attach' && $this->_var['format_0_85519800_1453191028'] != 'image' && $this->_var['format_0_85519800_1453191028'] != 'null' && $this->_var['format_0_85519800_1453191028'] != 'enabled'): ?>
+<?php elseif ($this->_var['format_0_23692200_1453275574'] != 'attach' && $this->_var['format_0_23692200_1453275574'] != 'image' && $this->_var['format_0_23692200_1453275574'] != 'null' && $this->_var['format_0_23692200_1453275574'] != 'enabled'): ?>
             <?php echo $this->_var['field']; ?>: {
 <?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?>
                 required: true,
-<?php if ($this->_var['format_0_85519800_1453191028'] == 'catalog'): ?>
-                min: 1<?php if ($this->_var['format_0_85519800_1453191028'] == 'text' || $this->_var['format_0_85519800_1453191028'] == 'textarea'): ?>,<?php endif; ?>
+<?php if ($this->_var['format_0_23692200_1453275574'] == 'catalog'): ?>
+                min: 1<?php if ($this->_var['format_0_23692200_1453275574'] == 'text' || $this->_var['format_0_23692200_1453275574'] == 'textarea'): ?>,<?php endif; ?>
 
-<?php elseif ($this->_var['format_0_85519800_1453191028'] == 'select-from-db' || $this->_var['format_0_85519800_1453191028'] == 'radio-from-db' || $this->_var['format_0_85519800_1453191028'] == 'checkbox-from-db'): ?>
-                min: 1<?php if ($this->_var['format_0_85519800_1453191028'] == 'text' || $this->_var['format_0_85519800_1453191028'] == 'textarea'): ?>,<?php endif; ?>
+<?php elseif ($this->_var['format_0_23692200_1453275574'] == 'select-from-db' || $this->_var['format_0_23692200_1453275574'] == 'radio-from-db' || $this->_var['format_0_23692200_1453275574'] == 'checkbox-from-db'): ?>
+                min: 1<?php if ($this->_var['format_0_23692200_1453275574'] == 'text' || $this->_var['format_0_23692200_1453275574'] == 'textarea'): ?>,<?php endif; ?>
 
-<?php elseif (( $this->_var['format_0_85519800_1453191028'] == 'select-from-array' || $this->_var['format_0_85519800_1453191028'] == 'radio-from-array' || $this->_var['format_0_85519800_1453191028'] == 'checkbox-from-array' ) && $this->_var['integer'] [ $this->_var['field'] ]): ?>
-                min: 1<?php if ($this->_var['format_0_85519800_1453191028'] == 'text' || $this->_var['format_0_85519800_1453191028'] == 'textarea'): ?>,<?php endif; ?>
+<?php elseif (( $this->_var['format_0_23692200_1453275574'] == 'select-from-array' || $this->_var['format_0_23692200_1453275574'] == 'radio-from-array' || $this->_var['format_0_23692200_1453275574'] == 'checkbox-from-array' ) && $this->_var['integer'] [ $this->_var['field'] ]): ?>
+                min: 1<?php if ($this->_var['format_0_23692200_1453275574'] == 'text' || $this->_var['format_0_23692200_1453275574'] == 'textarea'): ?>,<?php endif; ?>
 
 <?php else: ?>
 <?php endif; ?>
 <?php endif; ?>
-<?php if ($this->_var['format_0_85519800_1453191028'] == 'text' || $this->_var['format_0_85519800_1453191028'] == 'textarea'): ?>
+<?php if ($this->_var['format_0_23692200_1453275574'] == 'text' || $this->_var['format_0_23692200_1453275574'] == 'textarea'): ?>
                 maxlength: <?php echo $this->_var['max_lengths'][$this->_var['field']]; ?>
 
 <?php endif; ?>
@@ -470,7 +470,7 @@ if ($this->_foreach['seek']['total'] > 0):
 
 <?php elseif ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?>
             <?php echo $this->_var['field']; ?>: {
-                required: true<?php if ($this->_var['format_0_85519800_1453191028'] == 'text' || $this->_var['format_0_85519800_1453191028'] == 'textarea'): ?>,<?php endif; ?>
+                required: true<?php if ($this->_var['format_0_23692200_1453275574'] == 'text' || $this->_var['format_0_23692200_1453275574'] == 'textarea'): ?>,<?php endif; ?>
 
             }<?php if (! ($this->_foreach['seek']['iteration'] == $this->_foreach['seek']['total'])): ?>,<?php endif; ?>
 
@@ -478,12 +478,12 @@ if ($this->_foreach['seek']['total'] > 0):
 <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
         },
         messages: {
-<?php $_from = $this->_var['verify']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_85565600_1453191028');$this->_foreach['seek'] = array('total' => count($_from), 'iteration' => 0);
+<?php $_from = $this->_var['verify']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_23746300_1453275574');$this->_foreach['seek'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['seek']['total'] > 0):
-    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_85565600_1453191028']):
+    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_23746300_1453275574']):
         $this->_foreach['seek']['iteration']++;
 ?>
-<?php if ($this->_var['format_0_85565600_1453191028'] == 'password'): ?>
+<?php if ($this->_var['format_0_23746300_1453275574'] == 'password'): ?>
             <?php echo $this->_var['field']; ?>: {
 <?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?>
                 required: "<?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>不能为空。",
@@ -505,30 +505,30 @@ if ($this->_foreach['seek']['total'] > 0):
                 equalTo: "确认密码与密码不一致。"
             }<?php if (! ($this->_foreach['seek']['iteration'] == $this->_foreach['seek']['total'])): ?>,<?php endif; ?>
 
-<?php elseif ($this->_var['format_0_85565600_1453191028'] != 'attach' && $this->_var['format_0_85565600_1453191028'] != 'image' && $this->_var['format_0_85565600_1453191028'] != 'null' && $this->_var['format_0_85565600_1453191028'] != 'enabled'): ?>
+<?php elseif ($this->_var['format_0_23746300_1453275574'] != 'attach' && $this->_var['format_0_23746300_1453275574'] != 'image' && $this->_var['format_0_23746300_1453275574'] != 'null' && $this->_var['format_0_23746300_1453275574'] != 'enabled'): ?>
             <?php echo $this->_var['field']; ?>: {
 <?php if ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?>
                 required: "<?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>不能为空。",
-<?php if ($this->_var['format_0_85565600_1453191028'] == 'catalog'): ?>
-                min: "请选择<?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>"<?php if ($this->_var['format_0_85565600_1453191028'] == 'text' || $this->_var['format_0_85565600_1453191028'] == 'textarea'): ?>,<?php endif; ?>
+<?php if ($this->_var['format_0_23746300_1453275574'] == 'catalog'): ?>
+                min: "请选择<?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>"<?php if ($this->_var['format_0_23746300_1453275574'] == 'text' || $this->_var['format_0_23746300_1453275574'] == 'textarea'): ?>,<?php endif; ?>
 
-<?php elseif ($this->_var['format_0_85565600_1453191028'] == 'select-from-db' || $this->_var['format_0_85565600_1453191028'] == 'radio-from-db' || $this->_var['format_0_85565600_1453191028'] == 'checkbox-from-db'): ?>
-                min: "请选择<?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>"<?php if ($this->_var['format_0_85565600_1453191028'] == 'text' || $this->_var['format_0_85565600_1453191028'] == 'textarea'): ?>,<?php endif; ?>
+<?php elseif ($this->_var['format_0_23746300_1453275574'] == 'select-from-db' || $this->_var['format_0_23746300_1453275574'] == 'radio-from-db' || $this->_var['format_0_23746300_1453275574'] == 'checkbox-from-db'): ?>
+                min: "请选择<?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>"<?php if ($this->_var['format_0_23746300_1453275574'] == 'text' || $this->_var['format_0_23746300_1453275574'] == 'textarea'): ?>,<?php endif; ?>
 
-<?php elseif (( $this->_var['format_0_85565600_1453191028'] == 'select-from-array' || $this->_var['format_0_85565600_1453191028'] == 'radio-from-array' || $this->_var['format_0_85565600_1453191028'] == 'checkbox-from-array' ) && $this->_var['integer'] [ $this->_var['field'] ]): ?>
-                min: "请选择<?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>"<?php if ($this->_var['format_0_85565600_1453191028'] == 'text' || $this->_var['format_0_85565600_1453191028'] == 'textarea'): ?>,<?php endif; ?>
+<?php elseif (( $this->_var['format_0_23746300_1453275574'] == 'select-from-array' || $this->_var['format_0_23746300_1453275574'] == 'radio-from-array' || $this->_var['format_0_23746300_1453275574'] == 'checkbox-from-array' ) && $this->_var['integer'] [ $this->_var['field'] ]): ?>
+                min: "请选择<?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>"<?php if ($this->_var['format_0_23746300_1453275574'] == 'text' || $this->_var['format_0_23746300_1453275574'] == 'textarea'): ?>,<?php endif; ?>
 
 <?php else: ?>
 <?php endif; ?>
 <?php endif; ?>
-<?php if ($this->_var['format_0_85565600_1453191028'] == 'text' || $this->_var['format_0_85565600_1453191028'] == 'textarea'): ?>
+<?php if ($this->_var['format_0_23746300_1453275574'] == 'text' || $this->_var['format_0_23746300_1453275574'] == 'textarea'): ?>
                 maxlength: "长度不能超过<?php echo $this->_var['max_lengths'][$this->_var['field']]; ?>"
 <?php endif; ?>
             }<?php if (! ($this->_foreach['seek']['iteration'] == $this->_foreach['seek']['total'])): ?>,<?php endif; ?>
 
 <?php elseif ($this->_var['null'] [ $this->_var['field'] ] == 'NO'): ?>
             <?php echo $this->_var['field']; ?>: {
-                required: "<?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>不能为空。"<?php if ($this->_var['format_0_85565600_1453191028'] == 'text' || $this->_var['format_0_85565600_1453191028'] == 'textarea'): ?>,<?php endif; ?>
+                required: "<?php echo empty($this->_var['comments'][$this->_var['field']]) ? $this->_var['field'] : $this->_var['comments'][$this->_var['field']]; ?>不能为空。"<?php if ($this->_var['format_0_23746300_1453275574'] == 'text' || $this->_var['format_0_23746300_1453275574'] == 'textarea'): ?>,<?php endif; ?>
 
             }<?php if (! ($this->_foreach['seek']['iteration'] == $this->_foreach['seek']['total'])): ?>,<?php endif; ?>
 
@@ -537,21 +537,21 @@ if ($this->_foreach['seek']['total'] > 0):
         },
 <?php if ($this->_var['position']): ?>
         groups: {
-            position: "<?php $_from = $this->_var['position']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_85618300_1453191028');$this->_foreach['seek'] = array('total' => count($_from), 'iteration' => 0);
+            position: "<?php $_from = $this->_var['position']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_23803600_1453275574');$this->_foreach['seek'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['seek']['total'] > 0):
-    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_85618300_1453191028']):
+    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_23803600_1453275574']):
         $this->_foreach['seek']['iteration']++;
 ?><?php echo $this->_var['field']; ?><?php if (! ($this->_foreach['seek']['iteration'] == $this->_foreach['seek']['total'])): ?> <?php endif; ?><?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>"
         },
         errorPlacement:function(error,element) {
-            if (<?php $_from = $this->_var['position']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_85622400_1453191028');$this->_foreach['seek'] = array('total' => count($_from), 'iteration' => 0);
+            if (<?php $_from = $this->_var['position']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_23807900_1453275574');$this->_foreach['seek'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['seek']['total'] > 0):
-    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_85622400_1453191028']):
+    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_23807900_1453275574']):
         $this->_foreach['seek']['iteration']++;
 ?>element.attr("name") == "<?php echo $this->_var['field']; ?>"<?php if (! ($this->_foreach['seek']['iteration'] == $this->_foreach['seek']['total'])): ?> || <?php endif; ?><?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>) {
-                error.insertAfter("#<?php $_from = $this->_var['position']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_85626200_1453191028');$this->_foreach['seek'] = array('total' => count($_from), 'iteration' => 0);
+                error.insertAfter("#<?php $_from = $this->_var['position']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('field', 'format_0_23812000_1453275574');$this->_foreach['seek'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['seek']['total'] > 0):
-    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_85626200_1453191028']):
+    foreach ($_from AS $this->_var['field'] => $this->_var['format_0_23812000_1453275574']):
         $this->_foreach['seek']['iteration']++;
 ?><?php if (($this->_foreach['seek']['iteration'] == $this->_foreach['seek']['total'])): ?><?php echo $this->_var['field']; ?><?php endif; ?><?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>");
             } else {

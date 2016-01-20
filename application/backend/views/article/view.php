@@ -71,23 +71,6 @@
             <td><?php echo date('Y-m-d H:i:s', $article->addtime);?></td>
           </tr>
         </table>
-<?php if (! empty($seo)):?>
-        <h3 class="cut-off"><span>SEO设置</span><?php if (qd_func_auth('edit', $auth['article'], 'edit')): ?><a href="<?php echo base_url('article/seo/'.$article->id)?>">编辑</a><?php endif;?></h3>
-        <table class="col-list" width="100%" border="1" cellspacing="0" cellpadding="0">
-          <tr>
-            <th width="100px;" scope="row">SEO标题：</th>
-            <td><?php echo $seo['title'];?></td>
-          </tr>
-          <tr>
-            <th width="100px;" scope="row">SEO关键词：</th>
-            <td><?php echo $seo['keywords'];?></td>
-          </tr>
-          <tr>
-            <th width="100px;" scope="row">SEO描述：</th>
-            <td><?php echo $seo['description'];?></td>
-          </tr>
-        </table>
-<?php endif;?>
       </div>
     </div>
   </div>
