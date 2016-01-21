@@ -58,34 +58,42 @@
 > \#sudo chmod -R 755 qdsay/application/backend/models  
 > \#sudo chmod -R 755 qdsay/application/backend/views  
 
-##脚手架  
+##配置脚手架目录访问权限  
 > \#sudo chmod -R 777 qdsay/application/backend/scaffold/compiled  
 > \#sudo chmod -R 777 qdsay/application/backend/scaffold/template  
 > \#sudo chmod -R 777 qdsay/application/backend/scaffold/setup  
+勤道CMS基础开发框架拥有一套高度自定义的代码生成器（脚手架），程序会按照配置规则自动生成初始化程序  
+所以我们需要赋予上述目录写权限，项目发布前，移除脚手架程序后发布上线。  
 
-###访问：  
+###与脚手架相关的程序文件
+> qdsay/application/backend/scaffold/
+> qdsay/application/backend/controllers/scaffold.php
+> qdsay/application/backend/models/Scaffold_model.php
+> qdsay/application/backend/libraries/Template.php
+
+###脚手架访问地址：  
 > localhost/backend/scaffold  
 
-###配置：
-文本：Text
-密码：Password
-文本域：TextArea
-分类：Catalog
-下拉选项（DB）：Select-From-DB
-下拉选项（Array）：Select-From-Array
-单选框（DB）：Radio-From-DB
-单选框（Array）：Radio-From-Array
-复选框（DB）：CheckBox-From-DB
-复选框（Array）：CheckBox-From-Array
-开关：Switch
-隐藏域：Hidden
-上传：Attach
-上传预览：Image
-组图：Gallery
-富文本：Editor
-日期：Date
-省份：Position-Province
-城市：Position-City
-区县：Position-District
-添加时间：AddTime
-禁用：Disabled
+###配置项：
+> 文本框：Text  
+> 密码输入框：Password  
+> 文本域：TextArea  
+> 树状分类菜单组件：Catalog  
+> 下拉选项（DB）：Select-From-DB  
+> 下拉选项（Array）：Select-From-Array  
+> 单选框（DB）：Radio-From-DB  
+> 单选框（Array）：Radio-From-Array  
+> 复选框（DB）：CheckBox-From-DB  
+> 复选框（Array）：CheckBox-From-Array  
+> 开关：Switch  
+> 隐藏域：Hidden  
+> 上传组件：Attach  
+> 上传预览组件：Image  
+> 相册组件：Gallery  
+> 富文本编辑框：Editor  
+> 日期组件：Date  
+> 省市区三级联动（省份）：Position-Province  
+> 省市区三级联动（城市）：Position-City  
+> 省市区三级联动（区县）：Position-District  
+> 是否启用：Enabled  
+> 添加时间：AddTime  
