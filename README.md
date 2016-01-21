@@ -67,7 +67,7 @@
 
 ###与脚手架相关的程序文件
 > qdsay/application/backend/scaffold/  
-> qdsay/application/backend/controllers/scaffold.php  
+> qdsay/application/backend/controllers/Scaffold.php  
 > qdsay/application/backend/models/Scaffold_model.php  
 > qdsay/application/backend/libraries/Template.php  
 
