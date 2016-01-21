@@ -66,10 +66,10 @@
 所以我们需要赋予上述目录写权限，项目发布前，移除脚手架程序后发布上线。  
 
 ###与脚手架相关的程序文件
-> qdsay/application/backend/scaffold/
-> qdsay/application/backend/controllers/scaffold.php
-> qdsay/application/backend/models/Scaffold_model.php
-> qdsay/application/backend/libraries/Template.php
+> qdsay/application/backend/scaffold/  
+> qdsay/application/backend/controllers/scaffold.php  
+> qdsay/application/backend/models/Scaffold_model.php  
+> qdsay/application/backend/libraries/Template.php  
 
 ###脚手架访问地址：  
 > localhost/backend/scaffold  
