@@ -58,10 +58,22 @@
 > \#sudo chmod -R 755 qdsay/application/backend/models  
 > \#sudo chmod -R 755 qdsay/application/backend/views  
 
-##配置脚手架目录访问权限  
-> \#sudo chmod -R 777 qdsay/application/backend/scaffold/compiled  
-> \#sudo chmod -R 777 qdsay/application/backend/scaffold/template  
-> \#sudo chmod -R 777 qdsay/application/backend/scaffold/setup  
+##二次开发
+勤道CMS作为一套开发框架将很容易在此进出之上进行程序扩展，
+###建立数据库表  
+如需要使用脚手架CRUD程序，请使用如下数据库基础表结构。并为每张表和每个字段添加COMMENT。  
+
+###数据库基础表结构
+> CREATE TABLE `qd_table_name` (  
+>   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,  
+>   `addtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '添加时间',  
+>   `uptime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',  
+>   PRIMARY KEY (`id`),  
+>   KEY `fk_addtime` (`addtime`),  
+>   KEY `fk_uptime` (`uptime`)  
+> ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='文章';  
+
+##脚手架的使用  
 勤道CMS基础开发框架拥有一套高度自定义的代码生成器（脚手架），程序会按照配置规则自动生成初始化程序  
 所以我们需要赋予上述目录写权限，项目发布前，移除脚手架程序后发布上线。  
 
@@ -71,10 +83,16 @@
 > qdsay/application/backend/models/Scaffold_model.php  
 > qdsay/application/backend/libraries/Template.php  
 
-###脚手架访问地址：  
+###配置  
+####设置脚手架目录访问权限  
+> \#sudo chmod -R 777 qdsay/application/backend/scaffold/compiled  
+> \#sudo chmod -R 777 qdsay/application/backend/scaffold/template  
+> \#sudo chmod -R 777 qdsay/application/backend/scaffold/setup  
+
+####访问-程序入口地址：  
 > localhost/backend/scaffold  
 
-###配置项：
+####配置字段输入类型与输入方式：
 > 文本框：Text  
 > 密码输入框：Password  
 > 文本域：TextArea  
