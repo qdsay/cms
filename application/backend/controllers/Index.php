@@ -25,6 +25,13 @@ class Index extends QD_Controller {
             'application/logs' => is_writable($this->frontend().'logs'),
             'uploads' => is_writable($this->uploads())
         );
+
+        $this->data['scaffold'] = array(
+            'application/backend/scaffold' => file_exists(APPPATH.'scaffold'),
+            'application/backend/controller/Scaffold.php' => file_exists(APPPATH.'controllers/Scaffold.php'),
+            'application/backend/models/Scaffold_model.php' => file_exists(APPPATH.'models/Scaffold_model.php'),
+        );
+
         $this->load->view('index',$this->data);
     }
 

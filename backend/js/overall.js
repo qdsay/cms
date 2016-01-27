@@ -58,11 +58,11 @@ $().ready(function() {
         });
     });
 
-    $(".setDisabled").click(function(){
+    $(".setEnabled").click(function(){
         var obj = $(this);
         var use = ['禁用','启用'];
         var rev = (parseInt(obj.attr('status')) == 0) ? 1 : 0;
-        $.get(base_url+"/disabled/"+obj.attr('id'), {disabled:rev}, function(msg){
+        $.get(base_url+"/enabled/"+obj.attr('id'), {enabled:rev}, function(msg){
             if(msg == 'success'){
                 obj.attr('status', rev);
                 obj.text(use[rev]);

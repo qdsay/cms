@@ -24,12 +24,25 @@
       <div id="subpanel">
 <?php if (in_array(false, $writeable)): ?>
         <div class="warning">
-          <h3>警告：</h3>
+          <p>文件权限：</p>
 <?php foreach($writeable as $path => $val):?>
 <?php if ($val === false): ?>
           <p><?php echo $dir[$path] .' '. $path;?> 目录不可写</p>
 <?php endif; ?>
 <?php endforeach;?>
+        </div>
+<?php endif; ?>
+<?php if (in_array(true, $scaffold)): ?>
+        <div class="warning">
+          <p>脚手架：</p>
+<?php foreach($scaffold as $path => $val):?>
+<?php if ($val === false): ?>
+          <p><?php echo $path;?> 不存在</p>
+<?php endif; ?>
+<?php endforeach;?>
+<?php if (! in_array(false, $scaffold)): ?>
+          <p><a href="<?php echo base_url('scaffold')?>" target="_blank">生成代码</a></p>
+<?php endif; ?>
         </div>
 <?php endif; ?>
       </div>

@@ -181,8 +181,8 @@ b.asc {background-position:0 -160px}
 .qd-tips-close {padding:0 8px;float:right;font-size:14px;font-weight:bold;color:#999999;cursor:pointer}
 .qd-tips-arrow {width:17px;height:17px;display:block;position:absolute;left:5px;background:url(../images/tips.png) -102px 0 no-repeat}
 
-.warning {padding:10px;margin-bottom:20px;border:1px solid transparent;border-radius:3px;border-color:#EEEEEE;background-color:#FAFAFA;color:#d83832;}
-.warning h3 {font-size:14px;line-height:25px;}
+.warning {padding:10px;margin-bottom:20px;border:1px solid transparent;border-radius:3px;border-color:#FBECCB;background-color:#FCF8E2;color:#F68300;}
+.warning h3 {line-height:25px;}
 .warning p {line-height:20px;}
 
 #copyright {width:100%;padding:10px 0;position:absolute;bottom:0;left:0;text-align:center;clear:both;float:left;}

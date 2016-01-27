@@ -14,7 +14,7 @@ class Index extends QD_Controller {
         $this->load->model('Catalog_model', 'catalog');
         $this->data['catalog'] = $this->catalog->get_option(array(
             'type' => 'appreciate',
-            'disabled' => 1
+            'enabled' => 1
         ));
 
         $this->load->view('index',$this->data);
