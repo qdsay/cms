@@ -30,10 +30,10 @@
 > SOURCE ./database/qdsay.sql  
 
 ####修改数据库配置
-> \#vi application/config/database.php  
-> \#vi application/backend/config/database.php  
-> \#vi application/config/config.php  
-> \#vi application/backend/config/config.php  
+> \#vim application/config/database.php  
+> \#vim application/backend/config/database.php  
+> \#vim application/config/config.php  
+> \#vim application/backend/config/config.php  
 
 ###文件权限
 前台程序入口：qdsay/index.php  
