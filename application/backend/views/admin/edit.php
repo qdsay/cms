@@ -25,7 +25,19 @@
       </div>
     </div>
     <div id="panel">
-      <div class="clear"></div>
+      <div id="headbar">
+        <div id="topitems">
+          <ul>
+<?php foreach($items as $k => $v):?>
+<?php if($k == 'edit'):?>
+            <li class="on">基本信息</li>
+<?php else:?>
+            <li><a href="<?php echo base_url('admin/'.$k.'/'.$admin->id)?>"><?php echo $v;?></a></li>
+<?php endif;?>
+<?php endforeach;?>
+          </ul>
+        </div>
+      </div>
       <div id="subpanel">
         <form action="<?php echo base_url('admin/edit/'.$admin->id)?>" method="post" name="myform" id="myform">
           <div class="item"><label class="item-title mark" for="username">用户名：</label><input type="text" class="input-txt" name="username" id="username" value="<?php echo $admin->username;?>" /></div>

@@ -25,7 +25,19 @@
       </div>
     </div>
     <div id="panel">
-      <div class="clear"></div>
+      <div id="headbar">
+        <div id="topitems">
+          <ul>
+<?php foreach($items as $k => $v):?>
+<?php if($k == 'edit'):?>
+            <li class="on"><?php echo $v;?></li>
+<?php else:?>
+            <li class="step">&gt;</li><li><?php echo $v;?></li>
+<?php endif;?>
+<?php endforeach;?>
+          </ul>
+        </div>
+      </div>
       <div id="subpanel">
         <form action="<?php echo base_url('groups/add')?>" method="post" name="myform" id="myform">
           <div class="item"><label class="item-title mark" for="name">用户组：</label><input type="text" class="input-txt" name="name" id="name" /></div>

@@ -32,7 +32,6 @@
 #toppage a {width:20px;height:20px;line-height:20px;margin-left:8px;background-color:#F8F8F8;border:1px solid #CECECE;display:inline-block;text-align:center}
 #toppage a.disabled {color:#CCCCCC;cursor:default}
 
-#topitems {padding:0 10px}
 #topitems ul {width:100%;height:35px;border-bottom:1px solid #e3e3e3;float:left}
 #topitems li {width:80px;height:36px;line-height:36px;float:left;text-align:center;font-size:13px;color:#333333}
 #topitems li.on {font-weight:700;background:url(../images/cur.png) center bottom no-repeat}
@@ -99,12 +98,12 @@ input.attach-btn {width:98px;padding-left:15px;background:url(../images/attach.p
 input.error {border:1px solid red}
 label.error {display:inline-block;width:180px;height:24px;line-height:24px;border:1px solid #E5C3C4;border-radius:3px 3px 3px 3px;background:url("../images/tipicon.png") no-repeat 0px -120px #FFEAEA;margin-left:10px;padding-left:30px;color:#CC0000}
 label.checked {display:inline-block;width:24px;padding-left:30px;border:1px solid #FFF;background-position:0px -48px;background-color:#FFFFFF}
-.larg {width:600px}
-.long {width:360px}
-.normal {width:240px}
-.short {width:120px}
-.mini {width:60px}
-.multiple {height:300px}
+.larg {width:600px !important}
+.long {width:360px !important}
+.normal {width:240px !important}
+.short {width:120px !important}
+.mini {width:60px !important}
+.multiple {height:300px !important}
 
 .attach {width:350px;height:24px;position:absolute;top:0;left:0;opacity:0;filter:alpha(opacity=0);cursor:pointer}
 .img-show {display:table;margin-right:10px;float:left;}

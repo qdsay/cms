@@ -6,6 +6,7 @@ class Admin extends QD_Controller {
 
     public function __construct()
     {
+        $this->data['items'] = array('edit' => '基本信息');
         parent::__construct();
     }
 
