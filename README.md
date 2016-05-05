@@ -77,8 +77,8 @@
 >   `addtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '添加时间',  
 >   `uptime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',  
 >   PRIMARY KEY (`id`),  
->   KEY `fk_addtime` (`addtime`),  
->   KEY `fk_uptime` (`uptime`)  
+>   KEY `index_addtime` (`addtime`),  
+>   KEY `index_uptime` (`uptime`)  
 > ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='文章';  
 
 ##脚手架的使用  
