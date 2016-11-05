@@ -110,6 +110,30 @@ class QD_Model extends CI_Model {
 
     /**
      * 列表查询
+     * @param   String
+     * @param   Array
+     * @param   Integer
+     * @param   Integer
+     * @param   String
+     * @return  Mixed
+     */
+    public function get_where_in($field, $in, $offset = 0, $num = 10, $order = '') {
+        $result = array();
+        if (!empty($in)) {
+            $this->db->select($this->list_attributes);
+            $this->db->where_in($field, $in);
+            if (!empty($order)) $this->db->order_by($order);
+            $this->db->limit($num, $offset);
+            $query = $this->db->get($this->table);
+            if ($query->num_rows() > 0) {
+                $result = $query->result();
+            }
+        }
+        return $result;
+    }
+
+    /**
+     * 列表查询
      * @param   Array
      * @param   String
      * @return  Mixed

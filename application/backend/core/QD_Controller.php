@@ -295,6 +295,11 @@ class QD_Controller extends CI_Controller {
             $this->storage->initialize($this->ctrl, $field); //初始化
             $this->storage->remove($target); //删除原始文件
             $target = $this->storage->resave($source); //文件另存为
+        } elseif (empty($source) && ! empty($target)) {
+            $this->load->library('storage');
+            $this->storage->initialize($this->ctrl, $field); //初始化
+            $this->storage->remove($target); //删除原始文件
+            $target = '';
         }
         return $target;
     }
