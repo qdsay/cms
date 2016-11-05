@@ -1,11 +1,13 @@
 /*!
  * Cropper v2.3.2
+ * Cropper v2.3.4
  * https://github.com/fengyuanchen/cropper
  *
  * Copyright (c) 2014-2016 Fengyuan Chen and contributors
  * Released under the MIT license
  *
  * Date: 2016-06-08T12:14:46.286Z
+ * Date: 2016-09-03T05:50:45.412Z
  */
 
 (function (factory) {
@@ -68,6 +70,10 @@
   var REGEXP_DATA_URL = /^data\:/;
   var REGEXP_DATA_URL_HEAD = /^data\:([^\;]+)\;base64,/;
   var REGEXP_DATA_URL_JPEG = /^data\:image\/jpeg.*;base64,/;
+  var REGEXP_ACTIONS = /^(e|w|s|n|se|sw|ne|nw|all|crop|move|zoom)$/;
+  var REGEXP_DATA_URL = /^data:/;
+  var REGEXP_DATA_URL_HEAD = /^data:([^;]+);base64,/;
+  var REGEXP_DATA_URL_JPEG = /^data:image\/jpeg.*;base64,/;
 
   // Data keys
   var DATA_PREVIEW = 'preview';
@@ -181,10 +187,19 @@
     // Scale should come first before rotate (#633)
     if (isNumber(scaleX) && isNumber(scaleY)) {
       transforms.push('scale(' + scaleX + ',' + scaleY + ')');
+    // Rotate should come first before scale to match orientation transform
+    if (isNumber(rotate) && rotate !== 0) {
+      transforms.push('rotate(' + rotate + 'deg)');
     }
 
     if (isNumber(rotate)) {
       transforms.push('rotate(' + rotate + 'deg)');
+    if (isNumber(scaleX) && scaleX !== 1) {
+      transforms.push('scaleX(' + scaleX + ')');
+    }
+
+    if (isNumber(scaleY) && scaleY !== 1) {
+      transforms.push('scaleY(' + scaleY + ')');
     }
 
     return transforms.length ? transforms.join(' ') : 'none';
@@ -268,8 +283,13 @@
       context.scale(scaleX, scaleY);
     }
 
+    // Rotate should come first before scale as in the "getTransform" function
     if (rotatable) {
       context.rotate(rotate * Math.PI / 180);
+    }
+
+    if (scalable) {
+      context.scale(scaleX, scaleY);
     }
 
     context.drawImage(image, floor(dstX), floor(dstY), floor(dstWidth), floor(dstHeight));
@@ -531,6 +551,9 @@
       var rotate;
       var scaleX;
       var scaleY;
+      var rotate = 0;
+      var scaleX = 1;
+      var scaleY = 1;
 
       if (orientation > 1) {
         this.url = arrayBufferToDataURL(arrayBuffer);
@@ -736,6 +759,7 @@
 
       // Trigger the built event asynchronously to keep `data('cropper')` is defined
       setTimeout($.proxy(function () {
+      this.completing = setTimeout($.proxy(function () {
         this.trigger(EVENT_BUILT);
         this.trigger(EVENT_CROP, this.getData());
         this.isCompleted = true;
@@ -745,6 +769,10 @@
     unbuild: function () {
       if (!this.isBuilt) {
         return;
+      }
+
+      if (!this.isCompleted) {
+        clearTimeout(this.completing);
       }
 
       this.isBuilt = false;
@@ -1268,25 +1296,11 @@
       });
     },
 
-    loadPreview: function ($opts) {
-      var aspectRatio = this.options.aspectRatio;
-      this.$preview.each(function (i) {
-        var $this = $(this);
-        var width = $opts[$this.attr('id')];
-        var height = width / aspectRatio;
-        // Save the original size for recover
-        $this.data(DATA_PREVIEW, {
-          width: width,
-          height: height,
-          html: $this.html()
-        });
-      });
-    },
-
     resetPreview: function () {
       this.$preview.each(function () {
         var $this = $(this);
         var data = $this.data(DATA_PREVIEW);
+
         $this.css({
           width: data.width,
           height: data.height
@@ -1675,6 +1689,8 @@
         minTop = cropBox.minTop;
         maxWidth = minLeft + min(container.width, canvas.left + canvas.width);
         maxHeight = minTop + min(container.height, canvas.top + canvas.height);
+        maxWidth = minLeft + min(container.width, canvas.width, canvas.left + canvas.width);
+        maxHeight = minTop + min(container.height, canvas.height, canvas.top + canvas.height);
       }
 
       range = {
@@ -2287,6 +2303,26 @@
 
         canvas.left -= (newWidth - width) / 2;
         canvas.top -= (newHeight - height) / 2;
+        if (originalEvent) {
+          offset = this.$cropper.offset();
+          center = originalEvent.touches ? getTouchesCenter(originalEvent.touches) : {
+            pageX: _event.pageX || originalEvent.pageX || 0,
+            pageY: _event.pageY || originalEvent.pageY || 0
+          };
+
+          // Zoom from the triggering point of the event
+          canvas.left -= (newWidth - width) * (
+            ((center.pageX - offset.left) - canvas.left) / width
+          );
+          canvas.top -= (newHeight - height) * (
+            ((center.pageY - offset.top) - canvas.top) / height
+          );
+        } else {
+
+          // Zoom from the center of the canvas
+          canvas.left -= (newWidth - width) / 2;
+          canvas.top -= (newHeight - height) / 2;
+        }
 
         canvas.width = newWidth;
         canvas.height = newHeight;
@@ -2862,6 +2898,7 @@
     modal: true,
 
     // Show the solid lines for guiding
+    // Show the dashed lines for guiding
     guides: true,
 
     // Show the center indicator for guiding
