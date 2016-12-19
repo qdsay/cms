@@ -60,16 +60,11 @@ class QD_Model extends CI_Model {
      */
     public function get($primary_value, $type = 'object')
     {
-        $result = array();
         $this->db->select($this->attributes);
         $this->db->where($this->primary_key, $primary_value);
         $this->db->limit(1);
         $query = $this->db->get($this->table);
-        if ($query->num_rows() > 0)
-        {
-            $result = $query->first_row($type);
-        }
-        return $result;
+        return $query->first_row($type);
     }
 
     /**
@@ -79,17 +74,12 @@ class QD_Model extends CI_Model {
      */
     public function get_where($where = array(), $order = '', $type = 'object')
     {
-        $result = array();
         $this->db->select($this->attributes);
         ! empty($where) && $this->db->where($where);
         ! empty($order) && $this->db->order_by($order);
         $this->db->limit(1);
         $query = $this->db->get($this->table);
-        if ($query->num_rows() > 0)
-        {
-            $result = $query->first_row($type);
-        }
-        return $result;
+        return $query->first_row($type);
     }
 
     /**
@@ -102,17 +92,12 @@ class QD_Model extends CI_Model {
      */
     public function get_list_where($where = array(), $offset = 0, $num = 10, $order = '', $type = 'object')
     {
-        $result = array();
         $this->db->select($this->list_attributes);
         ! empty($where) && $this->db->where($where);
         ! empty($order) && $this->db->order_by($order);
         $this->db->limit($num, $offset);
         $query = $this->db->get($this->table);
-        if ($query->num_rows() > 0)
-        {
-            $result = $query->result($type);
-        }
-        return $result;
+        return $query->result($type);
     }
 
     /**
@@ -134,10 +119,7 @@ class QD_Model extends CI_Model {
             ! empty($order) && $this->db->order_by($order);
             $this->db->limit($num, $offset);
             $query = $this->db->get($this->table);
-            if ($query->num_rows() > 0)
-            {
-                $result = $query->result($type);
-            }
+            $result = $query->result($type);
         }
         return $result;
     }
@@ -150,16 +132,11 @@ class QD_Model extends CI_Model {
      */
     public function get_all($where = array(), $order = '', $type = 'object')
     {
-        $result = array();
         $this->db->select($this->list_attributes);
         ! empty($where) && $this->db->where($where);
         ! empty($order) && $this->db->order_by($order);
         $query = $this->db->get($this->table);
-        if ($query->num_rows() > 0)
-        {
-            $result = $query->result($type);
-        }
-        return $result;
+        return $query->result($type);
     }
 
     /**
@@ -171,15 +148,18 @@ class QD_Model extends CI_Model {
     public function get_option($where = array(), $order = '')
     {
         $result = array();
-        $this->db->select(implode(",", $this->option));
-        ! empty($where) && $this->db->where($where);
-        ! empty($order) && $this->db->order_by($order);
-        $query = $this->db->get($this->table);
-        if ($query->num_rows() > 0)
+        if (! empty($this->option))
         {
-            foreach($query->result_array() as $row)
+            $this->db->select(implode(",", $this->option));
+            ! empty($where) && $this->db->where($where);
+            ! empty($order) && $this->db->order_by($order);
+            $query = $this->db->get($this->table);
+            if ($query->num_rows() > 0)
             {
-                $result[$row[$this->option[0]]] = $row[$this->option[1]];
+                foreach($query->result_array() as $row)
+                {
+                    $result[$row[$this->option[0]]] = $row[$this->option[1]];
+                }
             }
         }
         return $result;
@@ -278,7 +258,7 @@ class QD_Model extends CI_Model {
      * @return  Boolean
      */
     public function update_where_in($field, $in, $data) {
-        if (is_array() && ! empty($in))
+        if (is_array($in) && ! empty($in))
         {
             $this->db->where_in($field, $in);
             return $this->db->update($this->table, $data);
@@ -383,7 +363,6 @@ class QD_Model extends CI_Model {
      */
     public function list_result($cur_page = 0, $per_page = 20, $type = 'object')
     {
-        $result = array();
         $this->cur_page = $cur_page;
         $this->per_page = $per_page;
         $offset = $cur_page ? $per_page * ($cur_page - 1) : 0;
@@ -395,11 +374,7 @@ class QD_Model extends CI_Model {
         $this->load_order();
         $this->db->limit($per_page, $offset);
         $query = $this->db->get($this->table);
-        if ($query->num_rows() > 0)
-        {
-            $result = $query->result($type);
-        }
-        return $result;
+        return $query->result($type);
     }
 
     /**
@@ -495,7 +470,7 @@ class QD_Model extends CI_Model {
     }
 
     /**
-     * 设置Query子句
+     * 自定义字符串设置Where查询条件
      * @param   String
      */
     public function set_query($query)
